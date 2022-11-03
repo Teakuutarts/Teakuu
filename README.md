@@ -1,2 +1,1 @@
-# teakuu
-A Backup Webpage For teakuu.com
+# [Teakuu](https://www.teakuu.com)
