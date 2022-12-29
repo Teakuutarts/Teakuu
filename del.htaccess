@@ -1,0 +1,58 @@
+### Welcome to .htacces >:3
+### <-- means do not delete and -> # <- means you are allowed to delete it with the rule exception of # BEGIN/END WordPress.
+
+### Error Docs
+ErrorDocument 400 /sys/error/400/
+ErrorDocument 401 /sys/
+ErrorDocument 402 /sys/error/402/
+ErrorDocument 403 /sys/error/403/
+ErrorDocument 404 /sys/error/404/
+ErrorDocument 500 /sys/error/500/
+
+### HTTP to HTTPS / T.TK to WWW.T.TK
+#RewriteEngine On
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://www.teakuu.tk/$1 [R,L]
+### Only when port 443 + SSL is enabled ^
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} ^teakuu.tk$
+ #RewriteCond %{HTTP_HOST} ^otherdns.teakuu.tk$
+  RewriteRule (.*)$ https://www.teakuu.tk/$1 [R=301,L]
+</IfModule>
+
+### Mantinance
+#Redirect /index.html /mtn/
+
+### Redirects (301 is perm and 2 is temp btw)
+#Redirect 301 /exampledir/ https://other.teakuu.tk/
+#Redirect 302 /dir77/ https://other.teakuu.tk/
+Redirect 301 /admin/ https://www.teakuu.tk/wp-admin/
+Redirect 301 /banappeal/ https://forms.gle/KfVbn9zVa1DiqkVb9
+Redirect 301 /staffapp/ https://forms.gle/gzBoB8hZ2UZtKN1R7
+Redirect 301 /devapp/ https://forms.gle/25DxFBdnr6DK6rJa7
+Redirect 301 /invite/ https://discord.gg/invite/RwkzDHktGj
+Redirect 302 /discord/invite/ https://www.teakuu.tk/invite/
+Redirect 301 /mc/vote/ https://minecraftservers.org/vote/639283
+Redirect 301 /mc/plan/ https://mcn.teakuu.tk:8008
+Redirect 301 /mc/aviation/invite/ https://discord.gg/jWrV9wGJpk
+Redirect 301 /mc/pixelmon/invite/ https://discord.gg/cpGSzPFYqT
+Redirect 301 /mc/pixelmon/download/PLEASE%20USE%20CURSEFORGE/ https://www.teakuu.tk/mc/pixelmon/downloads/
+Redirect 301 /app/discord-bot/invite/ https://discord.com/api/oauth2/authorize?client_id=910565431927005194&permissions=8&scope=bot
+
+
+# BEGIN WordPress
+# The directives (lines) between "BEGIN WordPress" and "END WordPress" are
+# dynamically generated, and should only be modified via WordPress filters.
+# Any changes to the directives between these markers will be overwritten.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
