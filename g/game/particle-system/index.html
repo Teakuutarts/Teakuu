@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html><link type="text/css" rel="stylesheet" id="dark-mode-custom-link"><link type="text/css" rel="stylesheet" id="dark-mode-general-link"><style lang="en" type="text/css" id="dark-mode-custom-style"></style><style lang="en" type="text/css" id="dark-mode-native-style"></style><!-- %META% --><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>JS Particle Sandbox</title>
+	<link rel="stylesheet" type="text/css" href="./assets/css/reset-min.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/jquery-ui.css">
+	<link rel="stylesheet" type="text/less" href="./assets/css/particleController.css">
+	   
+	<script src="./assets/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./assets/js/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./assets/js/less-1.1.3.min.js" type="text/javascript" charset="utf-8"></script><style type="text/css" media="screen" id="less:javascript-particle-system-css-particleController">html {
+  background-color: #000;
+  font: 8pt Verdana, sans-serif;
+  color: white;
+}
+#container {
+  text-align: center;
+}
+#container span {
+  border: 1px solid white;
+  display: inline-block;
+}
+#container span #display {
+  background-color: #000;
+  cursor: default !important;
+}
+#container span #display:active {
+  cursor: default !important;
+}
+.controlContainer {
+  border: 1px solid #555;
+  background-color: #111;
+  position: fixed;
+  width: 160px;
+  top: 0;
+}
+.controlContainer li {
+  text-align: center;
+}
+.controlContainer button {
+  width: 95%;
+  margin: 2px 0;
+}
+.controlContainer .controls {
+  width: 160px;
+}
+.controlContainer .controls .ui-button-text {
+  padding: 2px 0px !important;
+}
+.controlContainer .showHideControls {
+  background-color: #444;
+  text-align: center;
+  cursor: pointer;
+  color: #ccc;
+}
+#controlContainer1 {
+  left: 0;
+}
+#controlContainer1 #welcomeMessage h3 {
+  font-size: 120%;
+  margin: 10px auto;
+  font-weight: bold;
+}
+#controlContainer1 #welcomeMessage p {
+  margin: 10px 0;
+}
+#controlContainer1 #shortcuts span {
+  cursor: pointer;
+  color: #00f;
+  text-decoration: underline;
+}
+#controlContainer1 #shortcuts div li {
+  text-align: left;
+}
+#controlContainer2 {
+  right: 0;
+}
+#controlContainer2 #maxParticles button {
+  width: 15%;
+  font-size: 75%;
+}
+#controlContainer2 #particleStyle button {
+  width: 25%;
+  font-size: 75%;
+}
+#controlContainer2 #clickBehavior {
+  text-align: center;
+  margin: 0 auto;
+}
+#controlContainer2 #clickBehavior .ui-button {
+  font-size: 80%;
+  width: 30%;
+}
+#footer {
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  margin: 1em auto;
+  text-align: center;
+}
+#footer textarea {
+  width: 80%;
+  height: 3em;
+}
+#floatingControls {
+  border: 1px solid #111;
+  background-color: #002;
+  display: none;
+  position: absolute;
+  width: 150px;
+}
+#floatingControls #variableControl {
+  font-size: 80%;
+  margin: 1em;
+}
+#floatingControls #variableControl .fieldAttract {
+  border: 1px solid #090 !important;
+}
+#floatingControls #variableControl .fieldRepel {
+  border: 1px solid #900 !important;
+}
+#floatingControls #variableControl .slider {
+  width: 80%;
+  margin: 0 auto;
+}
+#floatingControls #variableControl .slider .ui-slider-handle {
+  font-size: 80%;
+}
+#floatingControls button {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 0px;
+}
+#floatingControls #closeFloatingControls {
+  right: 0px;
+}
+#floatingControls #deleteObject {
+  right: 25px;
+}
+#error {
+  display: none;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 500px;
+  background-color: black;
+  z-index: 1000;
+  border: 2px solid #ccc;
+  text-align: center;
+}
+#error p {
+  font-size: 200%;
+  margin: 2em;
+}
+#error p a {
+  font-size: 150%;
+}
+</style>
+	<script src="./assets/js/Display.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./assets/particle/Particle.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./assets/particle/ParticleEmitter.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./assets/particle/ParticleSystem.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./assets/js/Field.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./assets/js/Util.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./assets/particle/particleController.js" type="text/javascript" charset="utf-8"></script>
+
+</style><style type="text/css">
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+.context-menu-list {
+  font-family: 'Lato', sans-serif !important;
+  font-size: 14px;
+  text-align: left;
+  font-weight: normal;
+  width: 200px;
+}
+.context-menu-item {
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  text-align: left;
+}
+.contextmenu-item-custom.contextmenu-item-custom__accent:not(:hover) {
+  background-color: #f8ffeb;
+}
+.contextmenu-item-custom.contextmenu-item-custom__success:not(:hover) {
+  background-color: #eeffcd;
+}
+</style></head>
+<body>
+	<div id="container">
+		<span><canvas id="display" width="1024" height="576"></canvas></span>
+	</div>
+
+	<div id="controlContainer1" class="controlContainer">
+   	<div class="showHideControls">
+   	   <p>Toggle</p>
+   	</div>
+	   <div class="controls" id="welcomeMessage">
+<!-- %CUSTOM_MESSAGE% -->
+   	   <div id="shortcuts">
+   	      <div>
+   	         <ul>
+   	            <li>A : toggle accelerations</li>
+   	            <li>P : toggle particles</li>
+   	            <li>V : toggle velocities</li>
+   	            <li>O : toggle objects</li>
+   	            <li>E : add emitter</li>
+   	            <li>F : add field</li>
+   	            <li>C : Clear</li>
+   	            <li>S : Step frame</li>
+   	            <li>Space : pause</li>
+   	         </ul>
+   	      </div>
+   	   </div>
+	   </div>
+	</div>
+
+	<div id="controlContainer2" class="controlContainer">
+   	<div class="showHideControls">
+   	   <p>Toggle Controls</p>
+   	</div>
+	   <div class="controls" id="displayControls">
+	      <ul>
+      	   <li><button id="addEmitter" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">New Emitter</span></button>                   </li>
+      	   <li><button id="addField" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">New Field</span></button>                   </li>
+      	   <li>Click Behavior</li>
+      	   <li>
+      	      <div id="clickBehavior" class="ui-buttonset">
+            		<input type="radio" id="clickBehavior1" name="clickBehavior" checked="checked" class="ui-helper-hidden-accessible"><label for="clickBehavior1" class="ui-state-active ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left" aria-pressed="true" role="button"><span class="ui-button-text">Repel</span></label>
+            		<input type="radio" id="clickBehavior2" name="clickBehavior" class="ui-helper-hidden-accessible"><label for="clickBehavior2" aria-pressed="false" class="ui-button ui-widget ui-state-default ui-button-text-only" role="button"><span class="ui-button-text">Attract</span></label>
+            		<input type="radio" id="clickBehavior3" name="clickBehavior" class="ui-helper-hidden-accessible"><label for="clickBehavior3" aria-pressed="false" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right" role="button"><span class="ui-button-text">None</span></label>
+      	      </div>
+      	   </li>
+            <li>&nbsp;</li>
+      	   <li><button id="startStop" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Stop</span></button>                   </li>
+      	   <li><button id="step" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Step Frame</span></button>                         </li>
+      	   <li><button id="objects" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Hide objects</span></button>        </li>
+      	   <li><button id="info" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Hide info</span></button>          </li>
+      	   <li><button id="particles" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Hide particles</span></button>         </li>
+      	   <li><button id="accelerations" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Show accelerations</span></button>     </li>
+      	   <li><button id="velocities" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Show velocities</span></button>         </li>
+      	   <li><button id="clear" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Clear</span></button>                       </li>
+      	   <li><button id="strings" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Strings</span></button>                                 </li>
+      	   <li>Max Particles :</li>
+      	   <li id="maxParticles">
+      	      <button value="10" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">10</span></button>
+      	      <button value="2000" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">2k</span></button>
+      	      <button value="5000" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">5k</span></button>
+      	      <button value="10000" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">10k</span></button>
+      	      <button value="20000" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">20k</span></button>
+      	   </li>
+      	   <li>Particle Style</li>
+      	   <li id="particleStyle">
+      	      <button value="basic" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Basic</span></button>
+      	      <button value="variable" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Colors</span></button>
+      	      <button value="fancy" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Fancy</span></button>
+      	   </li>
+      	</ul>
+   	</div>
+	</div>
+	<div id="footer">
+	   <button id="save" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Save Locally</span></button>
+	   <button id="load" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Load Locally</span></button>
+	   <span id="fbShare" style="cursor:pointer"></span><button class="loadExample ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" id="example1" role="button"><span class="ui-button-text">Example 1</span></button>
+	   <button class="loadExample ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" id="example2" role="button"><span class="ui-button-text">Example 2</span></button>
+	   <button class="loadExample ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" id="example3" role="button"><span class="ui-button-text">Example 3</span></button>
+	   <button class="loadExample ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" id="example4" role="button"><span class="ui-button-text">Example 4</span></button>
+	   <button class="loadExample ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" id="example5" role="button"><span class="ui-button-text">Example 5</span></button>
+	   <button class="loadExample ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" id="bonus" role="button"><span class="ui-button-text">Candle</span></button>
+	   <button class="loadExample ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" id="3alt" role="button"><span class="ui-button-text">Ex. 3 Alt</span></button>
+	</div>
+	<div id="floatingControls" class="closable">
+      <button id="closeFloatingControls" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" title=""><span class="ui-button-icon-primary ui-icon ui-icon-close"></span><span class="ui-button-text"></span></button>
+      <button id="deleteObject" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" title=""><span class="ui-button-icon-primary ui-icon ui-icon-trash"></span><span class="ui-button-text"></span></button>
+	   <div id="variableControl">raierstientrsh</div>
+	</div>
+   <div id="error">
+      <p>
+         Your browser is a little out of date to view this demo. Please update your browser or try with the latest versions of any of the following :
+         <br><br><br><br>
+         <a href="http://www.google.com/chrome/">Chrome</a><br>
+         <a href="http://www.mozilla.com/en-US/firefox/fx/">Firefox</a><br>
+         <a href="http://www.apple.com/safari/">Safari</a><br>
+         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home">Internet Explorer</a>
+      </p>
+      <button onclick="$(this).closest(&#39;#error&#39;).hide();" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Close Anyway</span></button>
+   </div>
+
+<div id="shimai-world" style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; z-index: 2147483647; pointer-events: none; background: transparent;"></div></body></html>

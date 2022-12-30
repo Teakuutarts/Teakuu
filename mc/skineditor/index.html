@@ -1,0 +1,1875 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="description" content="Make your own Minecraft skins from scratch or edit existing skins on your browser and share them with the rest.">
+<meta name="keywords" content="">
+<meta name="author" content="">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="x-rim-auto-match" content="none">
+<title>Minecraft Skin Editor</title>
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="dns-prefetch" href="//www.statcounter.com">
+<link rel="dns-prefetch" href="//cdn.domain.com">
+
+<link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="//www.google-analytics.com" crossorigin>
+<link rel="preconnect" href="//www.statcounter.com" crossorigin>
+<link rel="preconnect" href="//cdn.domain.com" crossorigin>
+<link rel="shortcut icon" href="/favicon.ico?v527">
+<link rel="stylesheet" type="text/css" href="/mc/skineditor/bundles/app/css/jgrowl.css?v527" />
+<link href="/mc/skineditor/bundles/app/css/styles.css?v527" rel="stylesheet" type="text/css" />
+
+<link href="/mc/skineditor/bundles/app/css/styles_mike.css?v527" rel="stylesheet" type="text/css" />
+
+<link href="/mc/skineditor/bundles/app/css/bootstrap_modal.css?v527" rel="stylesheet" type="text/css" />
+<link href="/mc/skineditor/css/select2.css?v527" rel="stylesheet" type="text/css" />
+<link href="/mc/skineditor/css/styles-min.css?v527" rel="stylesheet" type="text/css" />
+<style type="text/css">
+    @font-face{font-family:'Open Sans';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/opensans/v20/mem8YaGs126MiZpBA-UFWJ0bf8pkAp6a.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/opensans/v20/mem8YaGs126MiZpBA-UFUZ0bf8pkAp6a.woff2) format('woff2');unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/opensans/v20/mem8YaGs126MiZpBA-UFWZ0bf8pkAp6a.woff2) format('woff2');unicode-range:U+1F00-1FFF}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/opensans/v20/mem8YaGs126MiZpBA-UFVp0bf8pkAp6a.woff2) format('woff2');unicode-range:U+0370-03FF}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/opensans/v20/mem8YaGs126MiZpBA-UFWp0bf8pkAp6a.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/opensans/v20/mem8YaGs126MiZpBA-UFW50bf8pkAp6a.woff2) format('woff2');unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/opensans/v20/mem8YaGs126MiZpBA-UFVZ0bf8pkAg.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN7rgOX-hpKKSTj5PW.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN7rgOVuhpKKSTj5PW.woff2) format('woff2');unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN7rgOXuhpKKSTj5PW.woff2) format('woff2');unicode-range:U+1F00-1FFF}@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN7rgOUehpKKSTj5PW.woff2) format('woff2');unicode-range:U+0370-03FF}@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN7rgOXehpKKSTj5PW.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN7rgOXOhpKKSTj5PW.woff2) format('woff2');unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN7rgOUuhpKKSTjw.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+    </style>
+
+<script type="text/javascript" async=true>
+        (function() {
+          var host = window.location.hostname;
+          var element = document.createElement('script');
+          var firstScript = document.getElementsByTagName('script')[0];
+          var url = 'https://quantcast.mgr.consensu.org'
+            .concat('/choice/', 'yJGzvVj_7hDkP', '/', host, '/choice.js')
+          var uspTries = 0;
+          var uspTriesLimit = 3;
+          element.async = true;
+          element.type = 'text/javascript';
+          element.src = url;
+
+          firstScript.parentNode.insertBefore(element, firstScript);
+
+          function makeStub() {
+            var TCF_LOCATOR_NAME = '__tcfapiLocator';
+            var queue = [];
+            var win = window;
+            var cmpFrame;
+
+            function addFrame() {
+              var doc = win.document;
+              var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+              if (!otherCMP) {
+                if (doc.body) {
+                  var iframe = doc.createElement('iframe');
+
+                  iframe.style.cssText = 'display:none';
+                  iframe.name = TCF_LOCATOR_NAME;
+                  doc.body.appendChild(iframe);
+                } else {
+                  setTimeout(addFrame, 5);
+                }
+              }
+              return !otherCMP;
+            }
+
+            function tcfAPIHandler() {
+              var gdprApplies;
+              var args = arguments;
+
+              if (!args.length) {
+                return queue;
+              } else if (args[0] === 'setGdprApplies') {
+                if (
+                  args.length > 3 &&
+                  args[2] === 2 &&
+                  typeof args[3] === 'boolean'
+                ) {
+                  gdprApplies = args[3];
+                  if (typeof args[2] === 'function') {
+                    args[2]('set', true);
+                  }
+                }
+              } else if (args[0] === 'ping') {
+                var retr = {
+                  gdprApplies: gdprApplies,
+                  cmpLoaded: false,
+                  cmpStatus: 'stub'
+                };
+
+                if (typeof args[2] === 'function') {
+                  args[2](retr);
+                }
+              } else {
+                queue.push(args);
+              }
+            }
+
+            function postMessageEventHandler(event) {
+              var msgIsString = typeof event.data === 'string';
+              var json = {};
+
+              try {
+                if (msgIsString) {
+                  json = JSON.parse(event.data);
+                } else {
+                  json = event.data;
+                }
+              } catch (ignore) {}
+
+              var payload = json.__tcfapiCall;
+
+              if (payload) {
+                window.__tcfapi(
+                  payload.command,
+                  payload.version,
+                  function(retValue, success) {
+                    var returnMsg = {
+                      __tcfapiReturn: {
+                        returnValue: retValue,
+                        success: success,
+                        callId: payload.callId
+                      }
+                    };
+                    if (msgIsString) {
+                      returnMsg = JSON.stringify(returnMsg);
+                    }
+                    if (event && event.source && event.source.postMessage) {
+                      event.source.postMessage(returnMsg, '*');
+                    }
+                  },
+                  payload.parameter
+                );
+              }
+            }
+
+            while (win) {
+              try {
+                if (win.frames[TCF_LOCATOR_NAME]) {
+                  cmpFrame = win;
+                  break;
+                }
+              } catch (ignore) {}
+
+              if (win === window.top) {
+                break;
+              }
+              win = win.parent;
+            }
+            if (!cmpFrame) {
+              addFrame();
+              win.__tcfapi = tcfAPIHandler;
+              win.addEventListener('message', postMessageEventHandler, false);
+            }
+          };
+
+          makeStub();
+
+          var uspStubFunction = function() {
+            var arg = arguments;
+            if (typeof window.__uspapi !== uspStubFunction) {
+              setTimeout(function() {
+                if (typeof window.__uspapi !== 'undefined') {
+                  window.__uspapi.apply(window.__uspapi, arg);
+                }
+              }, 500);
+            }
+          };
+
+          var checkIfUspIsReady = function() {
+            uspTries++;
+            if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+              console.warn('USP is not accessible');
+            } else {
+              clearInterval(uspInterval);
+            }
+          };
+
+          if (typeof window.__uspapi === 'undefined') {
+            window.__uspapi = uspStubFunction;
+            var uspInterval = setInterval(checkIfUspIsReady, 6000);
+          }
+        })();
+        </script>
+
+
+<script async src='/mc/skineditor/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+<body class="">
+<div class="header">
+<div class="header-wrapper">
+<div class="mobile-menu">
+<i class="mm-top"></i>
+<i class="mm-med"></i>
+<i class="mm-bot"></i>
+</div>
+<div class="mobile-search"></div>
+<div class="mobile-profile-log"></div>
+<div class="header__top clearfix">
+<div class="logo">
+</div>
+</div>
+<div class="header__menu">
+<div class="header__menu-outer">
+</div>
+</div>
+</div>
+</div>
+<div class="wrapper clearfix">
+<div class="main">
+<div class="site-overlay"></div>
+
+<div class="top-ads">
+<div class="ads">
+<div class="top-banner-large">
+<div style="min-height: 250px;">
+<script>
+(function(zonefile) { 
+var y="cpmstarx";
+var drutObj = window[y] = window[y] || {};
+function failCpmstarAPI() { var failFn = function(o) { o && typeof(o) === "object" && o.fail && o.fail(); }; drutObj && Array.isArray(drutObj.cmd) && drutObj.cmd.forEach(failFn) && (drutObj.cmd.length = 0);  window.cpmstarAPI = window["_"+zonefile] = failFn; }
+var rnd = Math.round(Math.random()*999999);
+var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.onerror=failCpmstarAPI;
+var proto = document.location.protocol;
+var host = ( proto == "https:" || proto == "file:")?"https://server":"//cdn";
+if(window.location.hash=="#cpmstarDev") host = "//dev.server";
+if(window.location.hash=="#cpmstarStaging") host = "//staging.server"; 
+s.src = host + ".cpmstar.com/cached/zonefiles/" + zonefile + ".js?rnd="+rnd; 
+var s2=document.getElementsByTagName('script')[0];
+s2.parentNode.insertBefore(s, s2);
+window.cpmstarAPI = function(o) { (drutObj.cmd = drutObj.cmd || []).push(o); }
+}('22_10986_minecraftskins'));
+cpmstarAPI({kind:"go",module:"728x90adhesion"});
+
+cpmstarAPI({kind:"go",module:"segmentedvideo"});
+</script>
+<script>
+(function() {
+var cpmstar_percent = 50;
+if(Math.random()*100 < cpmstar_percent) { 
+(function(w,pid){
+var s = document.createElement('script'); s.src='https://ssl.cdne.cpmstar.com/cached/js/lib.js';
+var s2=document.getElementsByTagName('script')[0]; s2.parentNode.insertBefore(s, s2);
+var r=function(c,m){c=c.split('').reduce(function(a,b){return(a<<5)-a+b.charCodeAt(0)>>>m},0);return(10+((c*7)%26)).toString(36)+c.toString(36);},y=r(w.location.href.split('#')[0],1),c=r(w.location.href.split('#')[0]+pid,0);
+w.document.write('<div align="center" class="'+c+'"></div>');
+w[y]=w[y]||{};(w[y].libcmd=w[y].libcmd||[]).push({kind:'asynctagfetch',pid:pid,pindex:w.document.getElementsByClassName(c).length-1});
+})(window,78300);
+} else {
+(function () {
+window.e9 = new Object();
+e9.size = "728x90,970x250";
+e9.addBlockingCategories="Adult,Alcohol,Tobacco";
+document.write("<script src='https://tags.expo9.exponential.com/tags/minecraftskinscomNew/Homepage_ATF/tags.js'><\/script>");
+})();
+}
+})()
+</script>
+</div>
+</div>
+</div>
+</div>
+ </div>
+<div class="content">
+<h1 class="editor-heading">Minecraft Skin Editor</h1>
+<link href="/mc/skineditor/bundles/app/css/farbtastic.css?v527" rel="stylesheet" type="text/css" />
+<div id="hideBlock" style="display:none;"></div>
+<div id="lt" style="height:1px;width:1px;display:none;z-index:999999;"></div>
+<form style="visibility: hidden;" action="/mc/skineditor/download" method="POST" id="downloadForm" target="_blank">
+<input type="hidden" id="imageVal" name="imageVal" value="" />
+</form>
+<form style="visibility: hidden;" action="/upload/" method="POST" id="skinUploadToSiteForm">
+<input type="hidden" id="imageEditor" name="imageEditor" value="" />
+<input type="hidden" id="imageEditorPreset" name="imageEditorPreset" value="" />
+<input type="hidden" id="imageEditorPresetSelected" name="imageEditorPresetSelected" value="" />
+</form>
+<div class="avatar-creator clearfix">
+<div id="toolbox"></div>
+<div class="slide-leftbar">
+<i class="icon-pencil"></i>
+</div>
+<div class="slide-rightbar">
+<i class="icon-settings"></i>
+</div>
+<div class="left-toolbar">
+<a href="javascript:void(0);" class="tools active" id="colorholder_chose" title="Pencil Tool(p)">
+<i class="icon-pencil"></i>
+</a>
+<a href="javascript:void(0);" id="erasepixel" class="tools" title="Eraser(e)">
+<i class="icon-erase"></i>
+</a>
+<a href="javascript:void(0);" id="autotone" class="tools" title="Auto Tone(a)">
+<i class="icon-brush"></i>
+</a>
+<a href="javascript:void(0);" id="pickcolor" class="tools" title="Color Picker(c)">
+<i class="icon-pipet"></i>
+</a>
+<a href="javascript:void(0);" id="bucket" class="tools" title="Bucket Tool(b)">
+<i class="icon-bucket"></i>
+</a>
+<a href="javascript:void(0);" id="undo" class="tools w50" style="float:left;margin-right:4px;" title="Undo(u)">
+<i class="icon-undo"></i>
+</a>
+<a href="javascript:void(0);" id="redo" class="tools w50" title="Redo(r)">
+<i class="icon-redo"></i>
+</a>
+<a href="javascript:void(0);" id="darker" class="tools w50" style="float:left;margin-right:4px;margin-top:-2px;" title="Darken Color(z)">
+<i class="icon-brush-plus"></i>
+</a>
+<a href="javascript:void(0);" id="lighter" class="tools w50" style="margin-top:-2px;" title="Lighten Color(x)">
+<i class="icon-brush-minus"></i>
+</a>
+<a href="javascript:void(0);" id="zoom-in" class="tools w50 zoom-in" title="Zoom in(q)">
+<i class="icon-zoom-in"></i>
+</a>
+<a href="javascript:void(0);" id="zoom-out" class="tools w50 zoom-out" title="Zoom out(w)">
+<i class="icon-zoom-out"></i>
+</a>
+<a href="javascript:void(0);" id="mirrorTool" class="tools" style="margin-top:-2px;" title="Mirror Tool on/off(m)">
+<i class="icon-skin"></i>
+</a>
+<div id="reset" class="reset" title="Remove skin">
+<button class="btn" style="width:90px;">Reset Skin</button>
+</div>
+</div>
+<div class="left-toolbar-mobile">
+<div class="tools-wrapper clearfix">
+<a href="javascript:void(0);" id="mirrorTool" class="tools" title="Mirror Tool on/off(m)">
+<i class="icon-skin"></i>
+</a>
+<a href="javascript:void(0);" class="tools active" id="colorholder_chose" title="Pencil Tool(p)">
+<i class="icon-pencil"></i>
+</a>
+<a href="javascript:void(0);" id="erasepixel" class="tools" title="Eraser(e)">
+<i class="icon-erase"></i>
+</a>
+<a href="javascript:void(0);" id="autotone" class="tools" title="Auto Tone(a)">
+<i class="icon-brush"></i>
+</a>
+<a href="javascript:void(0);" id="pickcolor" class="tools" title="Color Picker(c)">
+<i class="icon-pipet"></i>
+</a>
+<a href="javascript:void(0);" id="zoom-in" class="tools w50 zoom-in" title="Zoom in(q)">
+<i class="icon-zoom-in"></i>
+</a>
+<a href="javascript:void(0);" id="bucket" class="tools" title="Bucket Tool(b)">
+<i class="icon-bucket"></i>
+</a>
+<a href="javascript:void(0);" id="undo" class="tools w50" title="Undo(u)">
+<i class="icon-undo"></i>
+</a>
+<a href="javascript:void(0);" id="redo" class="tools w50" title="Redo(r)">
+<i class="icon-redo"></i>
+</a>
+<a href="javascript:void(0);" id="darker" class="tools w50" title="Darken Color(z)">
+<i class="icon-brush-plus"></i>
+</a>
+<a href="javascript:void(0);" id="lighter" class="tools w50" title="Lighten Color(x)">
+<i class="icon-brush-minus"></i>
+</a>
+<a href="javascript:void(0);" id="zoom-out" class="tools zoom-out" title="Zoom out(w)">
+<i class="icon-zoom-out"></i>
+</a>
+<div id="reset" class="reset" title="Remove skin">
+<button class="btn" style="width:90px;">Reset Skin</button>
+</div>
+</div>
+<div class="button-wrapper clearfix">
+<div class="skin-body-overlay"><span class="body-overlay-span">Body & Overlay</span>
+<div class="skin-body-overlay-content">
+<div class="mobile-right-toggles"></div>
+</div>
+</div>
+<div class="skin-tools-mobile-wrapper">
+<div class="skin-tools mobile">
+<div class="selects mobile">
+<select id="pxs_mobile" name="pxs">
+<option value="4px">Classic (4px)</option>
+<option value="3px">Slim (3px)</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="canvas-wrapper">
+<div class="skin-canvas mobile">
+<div id="editor"></div>
+</div>
+</div>
+<div class="left-toolbar-tablet">
+<a href="javascript:void(0);" class="tools active" id="colorholder_chose" title="Pencil Tool(p)">
+<i class="icon-pencil"></i>
+</a>
+<a href="javascript:void(0);" id="erasepixel" class="tools" title="Eraser(e)">
+<i class="icon-erase"></i>
+</a>
+<a href="javascript:void(0);" id="autotone" class="tools" title="Auto Tone(a)">
+<i class="icon-brush"></i>
+</a>
+<a href="javascript:void(0);" id="pickcolor" class="tools" title="Color Picker(c)">
+<i class="icon-pipet"></i>
+</a>
+<a href="javascript:void(0);" id="bucket" class="tools" title="Bucket Tool(b)">
+<i class="icon-bucket"></i>
+</a>
+<a href="javascript:void(0);" id="undo" class="tools w50" title="Undo(u)">
+<i class="icon-undo"></i>
+</a>
+<a href="javascript:void(0);" id="redo" class="tools w50" title="Redo(r)">
+<i class="icon-redo"></i>
+</a>
+<a href="javascript:void(0);" id="darker" class="tools w50" title="Darken Color(z)">
+<i class="icon-brush-plus"></i>
+</a>
+<a href="javascript:void(0);" id="lighter" class="tools w50" title="Lighten Color(x)">
+<i class="icon-brush-minus"></i>
+</a>
+<a href="javascript:void(0);" id="zoom-in" class="tools w50 zoom-in" title="Zoom in(q)">
+<i class="icon-zoom-in"></i>
+</a>
+<a href="javascript:void(0);" id="zoom-out" class="tools zoom-out" title="Zoom out(w)">
+<i class="icon-zoom-out"></i>
+</a>
+<a href="javascript:void(0);" id="mirrorTool" class="tools" title="Mirror Tool on/off(m)">
+<i class="icon-skin"></i>
+</a>
+<div id="reset" class="reset" title="Remove skin">
+<button class="btn" style="width:90px;">Reset Skin</button>
+</div>
+</div>
+<div class="right-toolbar">
+<div class="color-picker">
+<br />
+<div id="colorpicker"></div>
+<form>
+<span id="colorSpan" style="visibility: hidden;">
+<input type="text" id="color" name="color" value="#123456" />
+</span>
+</form>
+</div>
+<div class="right-toggles"></div>
+<div class="skin-tools">
+<div class="selects">
+<select id="pxs" name="pxs">
+<option value="4px">Classic (4px)</option>
+<option value="3px">Slim (3px)</option>
+</select>
+</div>
+</div>
+<div class="right-btns clearfix">
+<a href="javascript:void(0);">
+<i class="icon-download" title="Download to computer"></i>
+</a>
+<a href="javascript:void(0);" class="editor_btn3new" data-assert="20">
+<i class="icon-upload-comp" title="Upload from computer"></i>
+</a>
+<div class="downloadError" style="display:none;color:red;padding-left:3px;">You cannot download a blank
+skin
+</div>
+<div class="uploadError" style="display:none;color:red;padding-left:3px;">You cannot upload a blank
+skin
+</div>
+</div>
+</div>
+</div>
+<div id="showSkin" style="display:none;">
+<canvas class="skin" id="skin" width="64" height="32"></canvas>
+<canvas class="uploadCanvas" id="uploadCanvas" width="64" height="64"></canvas>
+<canvas class="skin" id="skinMap" width="512" height="256" style="width: 64px; height: 32px;"></canvas>
+<span id="hideSkin" style="display:none">◳</span>
+</div>
+<div class="right-block-commerce">
+<div class="right-block-commerce-inner" style="display:block;">
+<script>
+(function() {
+var cpmstar_percent = 50;
+if(Math.random()*100 < cpmstar_percent) { 
+var s = document.createElement('script'); s.src='https://ssl.cdne.cpmstar.com/cached/js/lib.js';
+var s2=document.getElementsByTagName('script')[0]; s2.parentNode.insertBefore(s, s2);
+(function(w,pid){
+w.document.write('<div align="center" class="div-'+pid+'"></div>');
+var y = "cpmstarx", els = w.document.getElementsByClassName("div-"+pid), pindex = els.length-1, el = els[pindex];
+w[y]=w[y]||{};(w[y].libcmd=w[y].libcmd||[]).push({kind:'asynctagfetch',el:el,pid:pid,pindex:pindex});
+})(window,85035);
+} else {
+(function () {
+e9 = new Object();
+e9.size = "300x250,300x600,160x600";
+e9.addBlockingCategories="Adult,Alcohol,Tobacco";
+document.write("<script src='https://tags.expo9.exponential.com/tags/minecraftskinscomNew/ROS/tags.js'><\/script>");
+})();
+}
+})()
+</script>
+</div>
+</div>
+
+<div class="bottom-ads">
+<div class="ads">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5204328142213814" data-ad-slot="5665489332"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="modal fade" id="global_information_modal" tabindex="-1" role="dialog" aria-labelledby="global_information_modal">
+<div class="modal-dialog info-modal" role="document">
+<div class="modal-content">
+<div class="modal-body">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+<div class="modal-info">
+<br>
+<h3 class="js-header-information-modal"></h3>
+</div>
+</div>
+<div class="modal-footer modal-info-footer">
+<button type="button" class="btn btn-danger" data-dismiss="modal">Okay</button>
+</div>
+</div>
+</div>
+</div>
+<div class="cmp_ads">
+</div>
+
+<script>
+        var skindex_url = window.location.protocol + '//' + window.location.hostname + '/';
+
+        // Safari private window check
+        if (typeof localStorage === 'object') {
+            try {
+                localStorage.setItem('localStorage', 1);
+                localStorage.removeItem('localStorage');
+            } catch (e) {
+                Storage.prototype._setItem = Storage.prototype.setItem;
+                Storage.prototype.setItem = function () {
+                };
+                alert('Your web browser does not support storing settings locally. In Safari, the most common cause of this is using "Private Browsing Mode". Some settings may not save or some features may not work properly for you. Try using non private mode.');
+                window.location.href = skindex_url;
+            }
+        }
+    </script>
+<script src="/mc/skineditor/bundles/app/js/jquery-1.11.3.min.js?v527"></script>
+<script src="/mc/skineditor/bundles/app/js/lazysizes.min.js?v527"></script>
+<script>
+    $(".mobile-menu, .mobile-menu i").on('click', function (e) {
+        e.preventDefault();
+
+        $('.header__menu').css('visibility', 'visible');
+
+        // get scrollHeight before open menu
+        if (!$('.header__menu').is('.open-menu')) {
+            var scrollTopRealTime = $(window).scrollTop();
+            var scrollTopRealTime = $(window).scrollTop();
+            $('html').attr('data-scroll-top', scrollTopRealTime);
+
+        }
+
+        $('.header__menu').toggleClass('open-menu');
+        $('.site-overlay').toggleClass('shadow');
+        $('.wrapper').toggleClass('open-menu');
+        $('.content').toggleClass('open-menu');
+        $('html').toggleClass('open-menu');
+        $('body').toggleClass('open-menu');
+        $('.footer').toggleClass('open-menu');
+        $('.header').toggleClass('open-menu');
+        $('.auth, .profile-log').toggleClass('open-menu');
+        $('.auth-dropdown').slideUp();
+
+        // set scrollTop position after closing menu
+        if (!$('.header__menu').is('.open-menu')) {
+            scrollTopRealTime = $('html').attr('data-scroll-top');
+            $(window).scrollTop(scrollTopRealTime);
+        }
+    });
+
+    $('.mobile-search').on('click', function () {
+        $('.search').slideToggle();
+        $(".search input").focus();
+        $('.main > .content').toggleClass('search-open');
+        $('.top-banner-large').toggleClass('search-open');
+
+        var _mobileVisible = $('.search').data('mobile-visible');
+        $('.search').data('mobile-visible', !_mobileVisible);
+    });
+
+    $('.slide-leftbar > .icon-pencil').on('click', function (e) {
+        e.preventDefault();
+        $('.left-toolbar').toggleClass('open-leftbar');
+        $('.content').toggleClass('open-leftbar');
+        $('body').toggleClass('open-menu');
+    });
+    $('.slide-rightbar > .icon-settings').on('click', function (e) {
+        e.preventDefault();
+        $('.right-toolbar').toggleClass('open-rightbar');
+        $('.content').toggleClass('open-rightbar');
+        $('body').toggleClass('open-menu');
+    });
+</script>
+<script src="/mc/skineditor/bundles/app/js/select2.js?v527"></script>
+<script src="/mc/skineditor/bundles/app/js/jquery.cookie.js?v527"></script>
+<script src="/mc/skineditor/bundles/app/js/jgrowl.js?v527"></script>
+<script src="/mc/skineditor/bundles/app/js/bootstrap_tooltip.js?v527"></script>
+<script src="/mc/skineditor/bundles/app/js/util.js?v527"></script>
+<script src="/mc/skineditor/bundles/app/js/resolution-change.js?v527"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.3.6/mobile-detect.min.js"></script>
+<script>
+		var _this = this;
+		var currentTheme = "light";
+		var currentUser = "";
+		console.log('current theme - ', currentTheme);
+		$(function () {
+        $('#theme2').on('click', function (ev) {
+						if (currentTheme === 'light') {
+							changeTheme('dark');
+						} else {
+							changeTheme('light');
+						}
+        });
+
+				$('#dtheme').on('click', function (ev) {
+						if (currentTheme === 'light') {
+							changeTheme('dark');
+						} else {
+							changeTheme('light');
+						}
+        });
+		});
+		function changeTheme(theme) {
+				// create new cookie
+    		createCookie('dtheme', theme, 365);
+				var t = readCookie('dtheme');
+				console.log('t - ', t);
+				setTimeout(function() {
+					_this.location.href = _this.location.href;
+				}, 200);
+
+        //$.ajax({
+        //    type: 'post',
+        //    url: '/change-theme',
+        //    data: {
+        //        theme: theme,
+				//				user: ""
+        //    },
+        //    success: function (data) {
+        //        if (data.success) {
+				//					console.log(data);
+        //          _this.location.href = _this.location.href;
+        //        }
+        //    }
+        //});
+    }
+
+    function inIframe () {
+      try {
+          return window.self !== window.top;
+      } catch (e) {
+          return true;
+      }
+    }
+
+    var isInIframe = inIframe();
+    console.log('isInIframe ', isInIframe);
+
+
+    var skindex_url = window.location.protocol + '//' + window.location.hostname + '/';
+    var page_url = window.location.href;
+    var pathname = window.location.pathname;
+
+    //$('.header__menu').css('display', 'none');
+
+    var md = new MobileDetect(window.navigator.userAgent);
+    var mql = window.matchMedia("(orientation: portrait)");
+
+    var serverDevice = "0";
+    var device;
+
+    if (md.phone() || md.tablet()) {
+        $(document).on('touchend', function (e) {
+            $(this).focus();
+        });
+    }
+
+    if (md.tablet()) {
+        $('html').removeClass('mobile-view');
+        $('.right-block-commerce').remove();
+        $('.left-block-commerce').remove();
+        $('.skins-similar .skin').last().show();
+        $('.other-uploads .skin').last().show();
+    } else if (md.phone()) {
+        $('html').addClass('mobile-view');
+        $('.header__menu').css('visibility', 'hidden');
+        if ($('.skins-similar .skin').length >= 5) {
+            $('.skins-similar .skin').last().hide();
+        }
+        if ($('.other-uploads .skin').length >= 5) {
+            $('.other-uploads .skin').last().hide();
+        }
+        mql.addListener(function (m) {
+            if (!m.matches) {
+                $(document).focus();
+                $(_this).focus();
+            }
+        });
+    }
+
+    
+    //if (window.matchMedia("(orientation: landscape)").matches) {
+    // you're in LANDSCAPE mode
+    //}
+
+    //function changeOrientationDevice(device) {
+    //    $.ajax({
+    //        type: 'post',
+    //        url: '/change-orientation',
+    //        data: {
+    //            device: device
+    //        },
+    //        success: function (data) {
+    //            //var newDevice =  localStorage.getItem('newDevice');
+    //            if (data.success) {
+    //                //localStorage.setItem('newDevice', device);
+    //                _this.location.href = _this.location.href;
+    //            }
+    //        }
+    //    });
+    //}
+
+    // create new cookie
+    createCookie('history', '1', 7);
+
+    function createCookie(name, value, days) {
+        var expires, date;
+        if (days) {
+            date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toGMTString();
+        } else expires = "";
+        document.cookie = name + "=" + value + expires + "; path=/";
+    }
+
+    // read cookie
+    function readCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    // erase cookie
+    function eraseCookie(name) {
+        createCookie(name, "", -1);
+    }
+
+    $(function () {
+        $('.logoutBtn').on('click', function (ev) {
+            localStorage.setItem('logout', 'logout');
+        });
+        $('.loginBtn').on('click', function (ev) {
+            localStorage.removeItem('logout');
+        });
+        if (pathname !== '/avatar-maker/' && pathname !== '/admin/avatarexamples/admin_avatar_maker/') {
+            window.onload = function () {
+                // disables backspace on page except on input fields and textarea..
+                document.body.onkeydown = function (e) {
+                    var elm = e.target.nodeName.toLowerCase();
+                    if (e.which === 8 && (elm !== 'input' && elm !== 'textarea')) {
+                        e.preventDefault();
+                    }
+                    // stopping event bubbling up the DOM tree..
+                    e.stopPropagation();
+                };
+            }
+        }
+        if (pathname === '/login') {
+            $.ajax({
+                type: 'get',
+                url: '/get-username',
+                success: function (data) {
+                    if (data.success === 'success') {
+                        window.location.href = skindex_url;
+                    }
+                },
+                error: function (data) {
+                    console.log(data.error);
+                }
+            });
+        }
+    });
+    var redirectInterval = setInterval(function () {
+        var x = readCookie('history');
+        if (!x || (localStorage.getItem('logout') !== null && $('.user-info').is(":visible"))) {
+            if (!isInIframe) {
+                eraseCookie('history');
+                localStorage.removeItem('logout');
+                clearInterval(redirectInterval);
+                window.location.href = page_url;
+            }
+        }
+    }, 2000);
+</script>
+<script src="/mc/skineditor/bundles/app/js/bootstrap_modal.min.js?v527"></script>
+<script src="/mc/skineditor/bundles/app/js/moment.min.js?v527"></script>
+<script src="/mc/skineditor/bundles/app/js/textarea-helper.js?v527"></script>
+<script src="/mc/skineditor/bundles/app/js/bootstrap_tooltip.js?v527"></script>
+<script>
+    // detect visibility of page
+    var vis = (function () {
+        var stateKey, eventKey, keys = {
+            hidden: "visibilitychange",
+            webkitHidden: "webkitvisibilitychange",
+            mozHidden: "mozvisibilitychange",
+            msHidden: "msvisibilitychange"
+        };
+        for (stateKey in keys) {
+            if (stateKey in document) {
+                eventKey = keys[stateKey];
+                break;
+            }
+        }
+        return function (c) {
+            if (c) document.addEventListener(eventKey, c);
+            return !document[stateKey];
+        }
+    })();
+
+    // get sort direction
+    var dir = $('.sortDirection').html();
+    $('.' + dir + 'Sort').css('font-weight', 'bold');
+
+    /**
+     * Like/Dislike voting
+     * @param el
+     * @param num
+     */
+    function voteAction(skin_id, num) {
+        voteSkin(num, skin_id);
+    }
+
+    /**
+     * Function adding K or M for large values
+     * @param val
+     */
+    var likesFilter = function (val) {
+        var likes;
+        if (val >= 9999) {
+            likes = 9999;
+        } else if (val <= -9999) {
+            likes = -9999;
+        } else {
+            likes = val;
+        }
+        return likes;
+    };
+
+    /** Vote for skin
+     * @param vote
+     * @param skin_id
+     */
+    function voteSkin(vote, skin_id) {
+        var likesCount = $('[data-id="' + skin_id + '"]').find('.js-likes-count');
+        var profileLikes = $('.profile-btns').find('[data-role="total-amount-of-upvotes-all-skins"]');
+        if (likesCount.length == 0) {
+            var likesCount = $('.js-limit-likes');
+        }
+        if ((vote < 0 && parseInt(likesCount.html()) <= 9999) || parseInt(likesCount.html()) < 9999) {
+            $.ajax({
+                type: 'post',
+                url: '/add-vote',
+                data: {
+                    skin_id: skin_id,
+                    vote: vote
+                },
+                success: function (data) {
+                    if (data.success) {
+                        $('[data-id="' + skin_id + '"]').find('.js-like-dislike').removeClass('negative-vote').removeClass('positive-vote');
+                        if (vote > 0 && parseInt(likesCount.html()) < 9999) {
+                            var _newLikesCount = parseInt(likesCount.html()) + 1;
+                            likesCount.html(likesFilter(_newLikesCount));
+                            $('.sid-likes span').html(parseInt($('.sid-likes span').html()) + 1);
+                            $('[data-id="' + skin_id + '"]').find('[data-role="like-button"]').addClass('positive-vote');
+                            //$('div[data-role="skin-page-like-button"]').addClass('positive-vote');
+                            // increment profile count likes
+                            //profileLikes.html(parseInt(profileLikes.text()) + 1);
+                        } else if (vote < 0 && parseInt(likesCount.html()) > -9999) {
+                            var _newLikesCount = parseInt(likesCount.html()) - 1;
+                            likesCount.html(likesFilter(_newLikesCount));
+                            $('.sid-likes span').html(parseInt($('.sid-likes span').html()) - 1);
+                            $('[data-id="' + skin_id + '"]').find('[data-role="dislike-button"]').addClass('negative-vote');
+                            //$('div[data-role="skin-page-dislike-button"]').addClass('negative-vote');
+                            // decrement profile count likes
+                            //profileLikes.html(parseInt(profileLikes.text()) - 1);
+                        }
+                    } else {
+                        if (data.error === 'not login') {
+                            showNotify('Please <a href="/register/">Register</a> or <a href="/login/">Sign in</a> to vote');
+                        } else {
+                            showNotify(data.error);
+                        }
+                        $('div[data-role="skin-page-like-button"]').addClass('already-vote');
+                    }
+                },
+                complete: function (data) {
+                    var data = data.responseJSON;
+                    if (data.success) {
+                        $.ajax({
+                            type: 'post',
+                            url: '/add-rank',
+                            data: {
+                                skin_id: data.skin_id,
+                                upload_date: data.upload_date,
+                                gravity: data.gravity,
+                                vote: data.vote
+                            },
+                            success: function (data) {
+                                console.log('success');
+                            }
+                        });
+                    }
+                }
+            });
+        }
+    }
+
+    /**
+     * Unfollow user
+     * @param user_id
+     */
+    function unfollowUser(user_id) {
+        var d = $.Deferred();
+        var data = {
+            user_id: user_id
+        };
+        $.ajax({
+            type: 'post',
+            url: '/profile/actions/act/unfollow-user',
+            data: data,
+            success: function (data) {
+                if (data.success) {
+                    d.resolve(data);
+                } else {
+                    showNotify(data.message);
+                }
+            },
+            error: function (data) {
+                d.reject(data);
+            }
+        });
+        return d;
+    }
+
+    /**
+     * Get count of votes
+     * @param skin_id
+     */
+    function getVoteCount(skin_id) {
+        $.ajax({
+            type: 'post',
+            url: '/get-vote',
+            data: {
+                skin_id: skin_id
+            },
+            success: function (data) {
+                if (data.success === true) {
+                    $('[data-id="' + skin_id + '"]').find('.js-likes-count').html(data.cnt);
+                    $('.sid-likes').html(data.cnt);
+                } else {
+                    showNotify(data.message);
+                }
+            }
+        })
+    }
+
+
+    /**
+     * Set timeout
+     * to prevent multiply overlay
+     */
+    $('a.like-btn').on('click', function () {
+        var like = $(this);
+        if (like.not('.clicked-like')) {
+            like.addClass('clicked-like');
+            setTimeout(function () {
+                like.removeClass('clicked-like');
+            }, 10000)
+        }
+    });
+
+    $('a.dislike-btn').on('click', function () {
+        var like = $(this);
+        if (like.not('.clicked-like')) {
+            like.addClass('clicked-like');
+            setTimeout(function () {
+                like.removeClass('clicked-like');
+            }, 10000)
+        }
+    });
+
+
+    /**
+     * Show modal info
+     * @param ob
+     */
+    function showInfoModal(ob) {
+        var $modal = $('#profile_information_modal');
+        $modal.find('.js-header-information-modal').html(ob.header);
+        $modal.modal('show');
+    }
+
+    trimTitles();
+
+    /**
+     * Trim title
+     */
+    function trimTitles() {
+        var titles = $('span[class^=title]');
+        if (titles.length) {
+            [].forEach.call(titles, function (item) {
+                $(item).attr('data-height', $(item).height());
+                if ($(item).height() < 21) {
+                    $(item).html('<br />' + $(item).html());
+                    $(item).parents('.js-skin-title').addClass('no-grad');
+                }
+                var delta = 0,
+                    flag = 1;
+                checkOverflow(item, flag, delta);
+            });
+            $('.skin-title').css('visibility', 'visible');
+        } else {
+            return false;
+        }
+    };
+
+    /**
+     * Get String length and cut off letters
+     * @param item
+     * @param flag
+     * @param delta
+     */
+    function checkOverflow(item, flag, delta) {
+        if (flag && $(item).height() > 40) {
+            $(item).html($(item).html().substring(0, 40 - delta) + '...');
+            delta += 3;
+            checkOverflow(item, flag, delta);
+        }
+        flag = 0;
+        return false;
+    }
+
+    function createUrl(value) {
+        return value == undefined ? '' : value.replace(/[^a-z0-9_]+/gi, '-').replace(/^-|-$/g, '').toLowerCase();
+    }
+
+    // Fire events when document ready
+    $(function () {
+
+        $('#search_btn').on('click', function (e) {
+            var searchType = $('.select2-selection__rendered').text();
+            var searchInputVal = createUrl($(".search input").val());
+            var formUrl = searchType === 'Skins' ? '/search/skin/' + searchInputVal + '/1/' : '/search/author/' + searchInputVal + '/1/' ;
+            console.log(formUrl);
+            $('#search_form').attr('action', formUrl);
+            $('#search_form').submit();
+        });
+
+        $(".search input").on('keypress', function(e) {
+            if (e.which == 13) {
+                e.preventDefault();
+                var searchType = $('.select2-selection__rendered').text();
+                var searchInputVal = createUrl($(this).val());
+                var formUrl = searchType === 'Skins' ? '/search/skin/' + searchInputVal + '/1/' : '/search/author/' + searchInputVal + '/1/' ;
+                console.log('enter ', formUrl);
+                $('#search_form').attr('action', formUrl);
+                $('#search_form').submit();
+            }
+        });  
+
+        $('select').on('select2:select', function (e) {
+            var data = e.params.data;
+            console.log(data);
+            $(".search input").focus();
+            var searchInputVal = createUrl($(".search input").val());
+            var formUrl = data.id === 'skins' ? '/search/skin/' + searchInputVal + '/1/' : '/search/author/' + searchInputVal + '/1/' ;
+            console.log(formUrl);
+            $('#search_form').attr('action', formUrl);
+        });
+
+        //prevent shifting content when popup shown
+
+        $('div img[src*=cpm]').addClass('popup-shown');
+
+        //if ($(document).width() >= 767) {
+        //    // desktop view
+        //    var device = '0';
+        //    $('html').removeClass('mobile-view');
+        //    $('.skins-similar .skin').last().show();
+        //    $('.other-uploads .skin').last().show();
+        //} else {
+        //    // mobile view
+        //    var device = '1';
+        //    $('html').addClass('mobile-view');
+        //    if ($('.skins-similar .skin').length >= 5) {
+        //        $('.skins-similar .skin').last().hide();
+        //    }
+        //    if ($('.other-uploads .skin').length >= 5) {
+        //        $('.other-uploads .skin').last().hide();
+        //    }
+        //}
+
+
+
+//        var scrollTopRealTimeModal = $(window).scrollTop();
+//        $('.modal').on('show.bs.modal', function() {
+//            scrollTopRealTimeModal = $(window).scrollTop();
+//            $('html').attr('data-scroll-top', scrollTopRealTimeModal);
+//
+//            $('.wrapper').css('height', '100%');
+//            $('.wrapper').css('overflow', 'hidden');
+//            $(window).scrollTop(scrollTopRealTimeModal);
+//            $('body').scrollTop(scrollTopRealTimeModal);
+//            console.log("est");
+//        })
+
+
+        // Prevent scroll content under popup
+
+        function stopBodyScrolling (bool) {
+            if (bool === true) {
+                document.ontouchmove = function(e){ e.preventDefault(), true }
+            } else {
+                document.ontouchmove = function(e){ e.stopImmediatePropagation(), true }
+            }
+        }
+
+        stopBodyScrolling(false);
+
+        // SlideUp user info block
+        $(document).on('click', function (e) {
+
+            $('.open-menu .logo a').on('click', function (e) {
+                $( 'html' ).hasClass( "open-menu" ) ? e.preventDefault() : "";
+            });
+
+            $('.open-menu .footer').on('click', function (e) {
+                $( 'html' ).hasClass( "open-menu" ) ? e.preventDefault() : "";
+            });
+
+
+            $('.modal').on('show.bs.modal', function () {
+                stopBodyScrolling(true);
+                console.log('scroll block');
+            });
+
+            $('.modal').on('hidden.bs.modal', function () {
+                stopBodyScrolling(false);
+                console.log('scroll true');
+            });
+
+
+            var scrollTopRealTime = $('html').attr('data-scroll-top');
+            // ScrollTop & prevent scrolling background contrnt when mobile menu open
+            if ( (document.body.classList.contains('open-menu')) || (document.body.classList.contains('modal-open')) ) {
+                $('body').scrollTop(scrollTopRealTime);
+            }
+
+
+            var target = $(e.target);
+            if (!$(e.target).is('.user-info') && !$(e.target).is('.auth-dropdown a') && $(e.target).parents('.user-info').length == 0) {
+
+                if ($('.auth-dropdown').is(':visible')) {
+                    e.preventDefault();
+
+                    $('.auth-dropdown').slideUp();
+                    return false;
+                }
+            }
+
+            if ($('.header__menu').is('.open-menu')) {
+                if (target.parents(".mobile__menu").length == 0 && !target.is('.mobile-menu') && target.parents(".user-info").length == 0 && !target.is('.profile-log.open-menu') && !target.is('.auth-dropdown li') && !target.is('.user-info') && !
+                        target.is('.header__menu.open-menu') && !target.is(".header__menu.open-menu li") && target.parents(".mobile__menu").length == 0 && !target.is(".header__menu.open-menu .change-resolution-todesktop")) {
+                    $('.header').removeClass('open-menu');
+                    $('.wrapper').removeClass('open-menu');
+                    $('html').removeClass('open-menu');
+                    $('.header__menu').removeClass('open-menu');
+                    $('.footer').removeClass('open-menu');
+                    $('.site-overlay').removeClass('shadow');
+                    $('.content').removeClass('open-menu');
+                    $('body').removeClass('open-menu');
+                    $('.auth, .profile-log').removeClass('open-menu');
+//                    var scrollTopRealTime = $('html').attr('data-scroll-top');
+                    $(window).scrollTop(scrollTopRealTime);
+
+                }
+            }
+        });
+
+
+        if ($('.header__menu-outer > ul > li:first-child > a').hasClass('selected_menu_item')) {
+            $('.header__menu-outer ul li:first-child').addClass('red-border');
+        }
+
+        // Document 'Click' event for showing user info
+        $(document).on('click', '.user-info', function () {
+            $('.auth-dropdown ').slideToggle();
+        });
+
+        // Send like
+        $(document).on('click', '[data-role="like-button"]', function (e) {
+            e.preventDefault();
+            var skin_id = $(this).parents('[data-role="skin-wrapper"]').data('id');
+            voteAction(skin_id, 1);
+        });
+
+        // Send dislike
+        $(document).on('click', '[data-role="dislike-button"]', function (e) {
+            e.preventDefault();
+            var skin_id = $(this).parents('[data-role="skin-wrapper"]').data('id');
+            voteAction(skin_id, -1);
+        });
+
+        /*Select2*/
+        $(".js-example-basic-single").select2();
+        $('select.js-example-basic-single').select2({
+            minimumResultsForSearch: -1
+        });
+
+        /*Start: Prevent scrolling bg under popup*/
+        var scrollTopRealTime;
+        $('.modal').on('shown.bs.modal', function () {
+
+            scrollTopRealTime = $(window).scrollTop();
+
+            if ($('html').attr('data-modal-opened') == 'false' || !$('html').attr('data-modal-opened')) {
+                $('html').attr('data-modal-opened', true);
+                var scrolled = $(window).scrollTop();
+                $('html').addClass('modal-open');
+                $('html').addClass('modal-open');
+            }
+
+            var $modal = $(this);
+            var h = $modal.find('.modal-content').outerHeight();
+            var currentHeight = ($(window).height());
+            var modalTopMargin = ( (currentHeight / 2) - (h / 2) );
+
+            if (modalTopMargin < 0) {
+                modalTopMargin = 0;
+                $modal.css('z-index', 9999999);
+            }
+
+            if (modalTopMargin < 50 && modalTopMargin != 0) {
+                modalTopMargin = 60;
+            }
+            $modal.find('.modal-content').css("top", modalTopMargin + 'px');
+        });
+
+        $(window).on('orientationchange', function () {
+            var $modal = $('.modal.in');
+            if (navigator.userAgent.match(/iPhone|iPad/i)) {
+                // if Iphone or Ipad
+                var h_modal = $modal.find('.modal-content').outerHeight();
+                if ($(window).innerHeight() > $(window).innerWidth()) {
+                    //Portrait
+                    var currentHeightIphone = ($(window).innerHeight());
+                } else {
+                    //Landscape
+                    var currentHeightIphone = ($(window).innerWidth());
+                }
+
+                var modalTopMarginIphone = ( (currentHeightIphone / 2) - (h_modal / 2) );
+
+                if (modalTopMarginIphone < 0) {
+                    modalTopMarginIphone = 0;
+                    $modal.css('z-index', 9999999);
+                }
+
+                if (modalTopMarginIphone < 50 && modalTopMarginIphone != 0) {
+                    modalTopMarginIphone = 60;
+                }
+
+                $modal.find('.modal-content').css("top", modalTopMarginIphone + 'px');
+            } else {
+                var h = $modal.find('.modal-content').outerHeight();
+                var currentHeight = ($(window).height());
+                var modalTopMargin = ( (currentHeight / 2) - (h / 2) );
+
+                if (modalTopMargin < 0) {
+                    modalTopMargin = 0;
+                    $modal.css('z-index', 9999999);
+                }
+
+                if (modalTopMargin < 50 && modalTopMargin != 0) {
+                    modalTopMargin = 60;
+                }
+                $modal.find('.modal-content').css("top", modalTopMargin + 'px');
+            }
+        });
+
+
+        $('.modal').on('hidden.bs.modal', function () {
+
+            $(window).scrollTop(scrollTopRealTime);
+
+            if ($('.modal.in').length >= 1) {
+                $('body').css('padding-right', 17);
+            } else {
+                $('html').attr('data-modal-opened', false);
+                $('html').removeClass('modal-open');
+                $('html').css('position', 'relative');
+                $('html').css('margin-top', 0);
+                $('body').css('padding-right', 0);
+            }
+        });
+        /*End: Prevent scrolling bg under popup*/
+        var resizeTimer;
+        $(window).on('resize', function () {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function () {
+                var _this = this;
+
+                //if ($(document).width() >= 767) {
+                //    // desktop view
+                //    var device = '0';
+                //    $('html').removeClass('mobile-view');
+                //    $('.skins-similar .skin').last().show();
+                //    $('.other-uploads .skin').last().show();
+
+                    // if ($(document).width() <= 1300) {
+                        //if ($('.right-block-commerce-inner').css('left') === 'auto' || $('.left-block-commerce-inner').css('right') === 'auto') {
+                        //    _this.location.href = _this.location.href;
+                        //}
+                    // }
+                //} else {
+                //    // mobile view
+                //    var device = '1';
+                //    $('html').addClass('mobile-view');
+                //    if ($('.skins-similar .skin').length >= 5) {
+                //        $('.skins-similar .skin').last().hide();
+                //    }
+                //    if ($('.other-uploads .skin').length >= 5) {
+                //        $('.other-uploads .skin').last().hide();
+                //    }
+                //}
+
+                var $modal = $('.modal.in');
+                if (navigator.userAgent.match(/iPhone|iPad/i)) {
+                    // if Iphone or Ipad
+                    var h_modal = $modal.find('.modal-content').outerHeight();
+
+                    if ($(window).innerHeight() > $(window).innerWidth()) {
+                        //Portrait
+
+                        var currentHeightIphone = ($(window).innerHeight());
+                    } else {
+
+                        //Landscape
+                        var currentHeightIphone = ($(window).innerWidth());
+                    }
+                    var modalTopMarginIphone = ( (currentHeightIphone / 2) - (h_modal / 2) );
+
+
+                    if (modalTopMarginIphone < 0) {
+                        modalTopMarginIphone = 0;
+                        $modal.css('z-index', 9999999);
+                    }
+
+                    if (modalTopMarginIphone < 50 && modalTopMarginIphone != 0) {
+                        modalTopMarginIphone = 60;
+                    }
+
+                    $modal.find('.modal-content').css("top", modalTopMarginIphone + 'px');
+                } else {
+                    var h = $modal.find('.modal-content').outerHeight();
+                    var currentHeight = ($(window).height());
+                    var modalTopMargin = ( (currentHeight / 2) - (h / 2) );
+
+                    if (modalTopMargin < 0) {
+                        modalTopMargin = 0;
+                        $modal.css('z-index', 9999999);
+                    }
+
+                    if (modalTopMargin < 50 && modalTopMargin != 0) {
+                        modalTopMargin = 60;
+                    }
+                    $modal.find('.modal-content').css("top", modalTopMargin + 'px');
+                }
+
+                if ($('#editorP').is(':visible')) {
+                    localStorage.setItem('editorWidth', $('#editorP').width());
+                    if ($('#editorP').width() > '540') {
+                        var editorWidth = $('#editorP').width();
+                        var modelWidth = $('#model-preview').width();
+                        var newMargin = (editorWidth - modelWidth) / 2;
+                    }
+                }
+
+                //if (localStorage.getItem('new-device') !== device && !md.mobile()) {
+                //    $.ajax({
+                //        type: 'post',
+                //        url: '/change-orientation',
+                //        data: {
+                //            device: device
+                //        },
+                //        success: function (data) {
+                //            if (data.success) {
+                //                localStorage.setItem('new-device', device);
+                //                _this.location.href = _this.location.href;
+                //            }
+                //        },
+                //      error: function (data) {
+                //        }
+                //    });
+                //}
+            }, 250);
+        });
+
+        setTimeout(function() {
+            if ($('.profile-top').length > 0) {
+                var positionTop = $('.profile-top').offset().top;
+                $('.right-block-commerce-inner').css('top', positionTop - 128).show();
+                $('.left-block-commerce-inner').css('top', positionTop - 128).show();
+            } else if ($('#editorP').length > 0) {
+                var positionTop = $('.content').offset().top;
+                $('.right-block-commerce-inner').css('top', positionTop - 128).show();
+                $('.left-block-commerce-inner').css('top', positionTop - 128).show();
+            } else {
+                if ($('.content h1').length > 0) {
+                    var positionTop = $('.content h1').offset().top;
+                    $('.right-block-commerce-inner').css('top', positionTop - 70).show();
+                    $('.left-block-commerce-inner').css('top', positionTop - 70).show();
+                }
+            }
+        }, 3500);
+
+        if (window.location.pathname !== '/skin-editor/') {
+            $(window).scroll(function () {
+                var headerHeight = $('.header').innerHeight();
+                var contentHeight = $('.content').innerHeight();
+                if ($('.right-block-commerce-inner').length > 0) {
+                    var sidebarHeight = $('.right-block-commerce-inner').height();
+                } else {
+                    var sidebarHeight = $('.left-block-commerce-inner').height();
+                }
+                var sidebarBottomPos = contentHeight - sidebarHeight;
+                var trigger = $(window).scrollTop() - headerHeight;
+                // events for scrolling right sidebar block
+                if ($(window).scrollTop() >= (headerHeight*2)) {
+                    $('.right-block-commerce-inner').addClass('fixed');
+                    $('.left-block-commerce-inner').addClass('fixed');
+                } else {
+                    $('.right-block-commerce-inner').removeClass('fixed');
+                    $('.left-block-commerce-inner').removeClass('fixed');
+                }
+                if (trigger >= sidebarBottomPos) {
+                    $('.right-block-commerce-inner').addClass('bottom');
+                    $('.left-block-commerce-inner').addClass('bottom');
+                } else {
+                    $('.right-block-commerce-inner').removeClass('bottom');
+                    $('.left-block-commerce-inner').removeClass('bottom');
+                }
+            });
+        }
+    });
+</script>
+<script>
+    if ($('.user-info').data('user') === 1) {
+        console.log('user-info 1');
+        //window.location.replace(window.location.protocol + '//' + window.location.hostname + $('.logoutBtn').attr('href'));
+    }
+</script>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-84150335-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+<script type="text/javascript">
+    var sc_project=6759049;
+    var sc_invisible=1;
+    var sc_security="e8ec5192";
+    var sc_https=1;
+</script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async>
+</script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/6759049/0/e8ec5192/1/"
+alt="Web Analytics"></a></div></noscript>
+
+
+<script type="text/javascript">
+window._qevents = window._qevents || [];
+
+(function() {
+var elem = document.createElement('script');
+elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+})();
+
+window._qevents.push({
+qacct:"p-yJGzvVj_7hDkP",
+uid:"__INSERT_EMAIL_HERE__"
+});
+</script>
+<noscript>
+<div style="display:none;">
+<img src="//pixel.quantserve.com/pixel/p-yJGzvVj_7hDkP.gif" border="0" height="1" width="1" alt="Quantcast"/>
+</div>
+</noscript>
+
+<script src="/mc/skineditor/bundles/app/js/bowser.js?v527"></script>
+<script src="/mc/skineditor/bundles/app/js/three.59.js?v527"></script>
+<script src="/mc/skineditor/bundles/app/js/newOrbit.js?v527"></script>
+<script src="/mc/skineditor/bundles/app/js/app3.js?v527"></script>
+<script src="/mc/skineditor/bundles/app/js/farbtastic.js?v527"></script>
+<script src="/mc/skineditor/bundles/app/js/tinycolor.js?v527"></script>
+<script>
+        $(document).ready(function () {
+
+            $.removeCookie("uploadFromGrabber");
+            localStorage.removeItem('uploadKeyBtn');
+            localStorage.removeItem('uploadKey');
+            localStorage.removeItem('imageForGrabber');
+            var eraseActive = null,
+                pickerActive = null,
+                paintActive = null,
+                brushActive = null,
+                bucketActive = null,
+                mirrorActive = null;
+
+            function toggleBtn(name, shortName) {
+                $('.avatar-creator a').removeClass('active');
+                $('.avatar-creator #' + name).addClass('active');
+            }
+
+            function resetActive() {
+                eraseActive = null;
+                pickerActive = null;
+                paintActive = null;
+                brushActive = null;
+                bucketActive = null;
+                mirrorActive = null;
+            }
+
+            function ColorLuminance(hex, lum, tonik) {
+                if (tonik === "darker") {
+                    var rgb = tinycolor(hex).darken(5).toString();
+                } else {
+                    var rgb = tinycolor(hex).lighten(5).toString();
+                }
+                $("#colorholder_div").css("background", rgb);
+                $("#color").css("background", rgb);
+                $("#color").val(rgb);
+                $(".colorbip").css("background", rgb);
+                $("#color").trigger('keyup');
+
+                return rgb;
+            }
+
+            var setBorderToColor = function () {
+                var rgb = tinycolor($('#color').val()).darken(15).toString();
+                $('#color').css({
+                    "border-color": rgb,
+                    "border-width": "1px !important",
+                    "border-style": "solid",
+                    "border-radius": "50%"
+                });
+            }
+
+            $('#colorpicker').farbtastic('#color').mouseup(function () {
+                if (eraseActive === 1) {
+                    toggleBtn('colorpicker');
+                    resetActive();
+                    paintActive = 1;
+                    $('#colorholder_chose').addClass('active');
+                    setBorderToColor();
+                }
+            });
+
+            setBorderToColor();
+            $('#colorSpan').css('visibility', 'visible');
+
+            $('.avatar-creator #colorholder_chose').on('click', function (e) {
+                e.preventDefault();
+                toggleBtn('colorholder_chose');
+                resetActive();
+                paintActive = 1;
+                $('#colorholder_chose').addClass('active');
+                if ($('#colorholder_chose').hasClass('activeHide')) {
+                    $('#colorholder_chose').removeClass('activeHide');
+                }
+            });
+
+            $(document).on('paste blur keyup mousemove', '#colorpicker *, #color', function (event) {
+                if (event.type == 'paste' || event.type == 'blur') {
+                    $("#color").val('');
+                    var element = $(event.target);
+                    var count = 0;
+                    setTimeout(function () {
+                        var text = $(element).val();
+                        if (count === 0) {
+                            var firstColor = text.charAt(0);
+                            if (firstColor !== "#" && text.length > 0) {
+                                $("#color").val("#" + text);
+                                $.farbtastic('#colorpicker').setColor("#" + text);
+                            } else if (text.length >= 7) {
+                                $("#color").val(text.slice(0, 7));
+                                $.farbtastic('#colorpicker').setColor($("#color").val());
+                            } else {
+                                $("#color").val(text);
+                                $.farbtastic('#colorpicker').setColor(text);
+                            }
+                            setBorderToColor();
+                        }
+                        count++;
+                    }, 100);
+                } else {
+                    setBorderToColor();
+                }
+            });
+
+            $('#colorpicker *, #color').on('keyup', function () {
+                var curVal = $("#color").val();
+                var firstColor = curVal.charAt(0);
+                if (firstColor !== "#" && curVal.length > 0) {
+                    $("#color").val("#" + curVal);
+                }
+
+                if (curVal.length >= 7) {
+                    $("#color").val(curVal.slice(0, 7));
+                    $("#color").blur();
+                    if (eraseActive === 1 || pickerActive === 1) {
+                        $('#colorholder_chose').trigger('click');
+                    }
+                    $.farbtastic('#colorpicker').color = $("#color").val();
+                }
+                var color = $("#color").css('background-color');
+                setBorderToColor();
+            });
+
+            $('#colorpicker *, #color').on('mouseup', function () {
+                if ($("#color").val() === "" && typeof $.farbtastic('#colorpicker').color !== "undefined") {
+                    $("#color").val($.farbtastic('#colorpicker').color);
+                    $("#color").blur();
+                    $('#colorholder_chose').trigger('click');
+                    $.farbtastic('#colorpicker').color = $("#color").val();
+                }
+                var color = $("#color").css('background-color');
+                setBorderToColor();
+            });
+
+            $('#colorpicker *, #color').on('blur', function () {
+                if ($("#color").val() === "") {
+                    $("#color").val($.farbtastic('#colorpicker').color);
+                    $.farbtastic('#colorpicker').setColor($("#color").val());
+                    setBorderToColor();
+                }
+            });
+
+            $('.avatar-creator #pickcolor').on('click', function (e) {
+                e.preventDefault();
+                toggleBtn('pickcolor');
+                resetActive();
+                pickerActive = 1;
+            });
+
+            $('.avatar-creator #bucket').on('click', function (e) {
+                e.preventDefault();
+                toggleBtn('bucket');
+                resetActive();
+                $('#colorholder_chose').addClass('active').addClass('activeHide');
+                paintActive = 1;
+                bucketActive = 1;
+                if ($(this).parent().find('#mirrorTool').hasClass('mirrorToolOn') || $(this).parent().find('#mirrorTool').hasClass('active')) {
+                    $(this).parent().find('#mirrorTool').removeClass('active').removeClass('mirrorToolOn').addClass('mirrorToolOff');
+                }
+            });
+
+            $('.avatar-creator #autotone').on('click', function (e) {
+                e.preventDefault();
+                toggleBtn('autotone');
+                resetActive();
+                $('#colorholder_chose').removeClass('activeHide');
+                brushActive = 1;
+            });
+
+            $('.avatar-creator #erasepixel').on('click', function (e) {
+                e.preventDefault();
+                toggleBtn('erasepixel');
+                resetActive();
+                $('#colorholder_chose').removeClass('activeHide');
+                eraseActive = 1;
+            });
+
+            $('.avatar-creator #mirrorTool').on('click', function (e) {
+                e.preventDefault();
+                if ($(this).hasClass('mirrorToolOn')) {
+                    mirrorActive = null;
+                    $(this).removeClass('mirrorToolOn').removeClass('active');
+                } else {
+                    if ($('.avatar-creator #autotone').hasClass('active')) {
+                        brushActive = 1;
+                    } else if ($('.avatar-creator #colorholder_chose').hasClass('active')) {
+                        paintActive = 1;
+                        if ($('.avatar-creator #bucket').hasClass('active')) {
+                            bucketActive = null;
+                            if ($('.left-toolbar-mobile').is(':visible')) {
+                                $('.left-toolbar-mobile #colorholder_chose').addClass('active');
+                                $('.left-toolbar-tablet #colorholder_chose').addClass('active');
+                            } else {
+                                $('.avatar-creator #colorholder_chose').removeClass('activeHide');
+                            }
+                            $('.avatar-creator #bucket').removeClass('active');
+                        }
+                    } else if ($('.avatar-creator #erasepixel').hasClass('active')) {
+                        eraseActive = 1;
+                    } else if ($('.avatar-creator #pickcolor').hasClass('active')) {
+                        pickerActive = 1;
+                    } else {
+                        $('.left-toolbar a').removeClass('active');
+                    }
+                    resetActive();
+                    if ($(this).hasClass('active')) {
+                        $(this).removeClass('active').removeClass('mirrorToolOn').addClass('mirrorToolOff');
+                    } else {
+                        $(this).addClass('active').removeClass('mirrorToolOff').addClass('mirrorToolOn');
+                    }
+                    mirrorActive = 1;
+                }
+            });
+
+            $('.avatar-creator #darker').on('click', function (e) {
+                e.preventDefault();
+                ColorLuminance($('#color').val(), -0.05, 'darker');
+                setBorderToColor();
+            });
+
+            $('.avatar-creator #lighter').on('click', function (e) {
+                e.preventDefault();
+                ColorLuminance($('#color').val(), 0.05, 'lighter');
+                setBorderToColor();
+            });
+
+            $('.avatar-creator .icon-upload-site').on('click', function (e) {
+                e.preventDefault();
+                var blank = isCanvasBlank($('#uploadCanvas')[0]);
+                setTimeout(function () {
+                    if (!blank) {
+                        $('.downloadError').hide();
+                        $('.uploadError').hide();
+                        setTimeout(function () {
+                                                        window.location.href = '/login/';
+                                                    }, 1500);
+                    } else {
+                        $('.downloadError').hide();
+                        $('.uploadError').show();
+                        setTimeout(function () {
+                            $('.uploadError').hide();
+                        }, 2000);
+                    }
+                }, 100);
+            });
+
+            function isCanvasBlank(canvas) {
+                var blank = document.createElement('canvas');
+                blank.width = canvas.width;
+                blank.height = canvas.height;
+
+                return canvas.toDataURL() == blank.toDataURL();
+            }
+
+            $('body').on('keydown', function (e) {
+                var keyCode = (window.event) ? e.keyCode : e.which;
+                if (keyCode === 80) {          // 'p' keycode / pencil tool
+                    $('#colorholder_chose').trigger('click');
+                } else if (keyCode === 65) {   // 'a' keycode / autotone tool
+                    $('#autotone').trigger('click');
+                } else if (keyCode === 67) {   // 'c' keycode / color picker tool
+                    $('#pickcolor').trigger('click');
+                } else if (keyCode === 69) {   // 'e' keycode / eraser tool
+                    $('#erasepixel').trigger('click');
+                } else if (e.keyCode === 81) { // 'q' keycode / zoom in tool
+                    $('.zoom-in').trigger('click');
+                } else if (e.keyCode === 87) { // 'w' keycode / zoom out tool
+                    $('.zoom-out').trigger('click');
+                } else if (e.keyCode === 66) { // 'b' keycode / bucket tool
+                    $('.avatar-creator #bucket').trigger('click');
+                } else if (e.keyCode === 77) { // 'm' keycode / mirror tool
+                    $('.avatar-creator #mirrorTool').trigger('click');
+                } else if (keyCode === 90) {   // 'z' keycode / darken color tool
+                    ColorLuminance($('#color').val(), -0.05, 'darker');
+                    setBorderToColor();
+                } else if (keyCode === 88) {   // 'x' keycode / lighten color tool
+                    ColorLuminance($('#color').val(), 0.05, 'lighter');
+                    setBorderToColor();
+                }
+            });
+        });
+    </script>
+<script type="text/html" id="toggles-template">
+        <div id="toggles">
+            <div class="controls">
+                <div title="hide/show skin body" class="underlay ed_gridbtn_body"><a id="showObject"
+                                                                                     class="btn btn-default">Body</a>
+                </div>
+                <div title="hide/show skin overlay" class="overlay ed_gridbtn_overlay"><a id="showOverlay"
+                                                                                          class="btn btn-default">Outer
+                        layer</a></div>
+            </div>
+
+            <div class="model-body">
+                <div data-parts="headOverlay,head" class="head ed_head"><a>&nbsp;</a></div>
+                <div data-parts="armROverlay,armR" class="armR ed_leftarm"><a>&nbsp;</a></div>
+                <div data-parts="bodyOverlay,body" class="body ed_body"><a>&nbsp;</a></div>
+                <div data-parts="armLOverlay,armL" class="armL ed_leftarm"><a>&nbsp;</a></div>
+                <div data-parts="legROverlay,legR" class="legL ed_leg_left"><a>&nbsp;</a></div>
+                <div data-parts="legLOverlay,legL" class="legR ed_leg_right"><a>&nbsp;</a></div>
+            </div>
+
+        </div>
+    </script>
+<script>
+        $(document).ready(function () {
+            $('html').addClass('footer-editor');
+            $('.body-overlay-span').on('click', function (e) {
+                e.preventDefault();
+                $('.skin-body-overlay-content').toggleClass('open');
+                return false;
+            });
+            $(document).on('touchstart click', function (evt) {
+                if (evt.target.className == "body-overlay-span")
+                    return;
+                if (evt.target.className == "skin-body-overlay-content")
+                    return;
+                if ($(evt.target).closest('.skin-body-overlay-content').length)
+                    return;
+                if ($('.skin-body-overlay-content').is('.open')) {
+                    $('.skin-body-overlay > span').trigger('click');
+                }
+            });
+        });
+    </script>
+<script>(function(){window['__CF$cv$params']={r:'73ddca8ccbbe0658',m:'NpQMabQ2LRVij8SBBUFAWGjbrTgj3VcSlUhbM.KavvQ-1661026423-0-Af3CimRodQBPc0Pq2afLklEE2HNggtslcDecNwfA0U+cuE69rHpqJsvIOyi3kvpN6NXTS/IdUF6jx0jbU9ImOfgf57sHbgqAAs3DthuDBtrdrONHyK9iP3SlE4M6ERmpOg==',s:[0x4241f7dd33,0xdf4ccaab27],}})();</script></body>
+</html>

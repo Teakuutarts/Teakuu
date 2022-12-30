@@ -1,0 +1,11 @@
+Just put it in this folder and you'll be able to select it from Settings > Background Image > imagename.png
+
+Most common file formats are supported, less common formats may work on some java instalations.
+For the image to work the width must be dividable by 64 and the height divideable by 32.
+Example: 640x320 works, 320x160 works, 320x320 works as well, 96x32 works but 100x121 doesn't.
+
+All included images are made by Patrik Swedman except "Alwayswatching.png" which is made by "Alwayswatching".
+"char_unlined.png is a remake of a image made by "r4c7" (which was probably based on one made by "PuyoDead"). All of which are based of the default skin made by "Notch".
+All the files with "EiE" in the name is made by The Eie.
+
+Just don't want to forget to credit someone :P

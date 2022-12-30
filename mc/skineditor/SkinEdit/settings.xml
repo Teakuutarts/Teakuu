@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>
+SkinEdit settings
+Automaticly generated at Sat Aug 20 14:32:56 EDT 2022
+
+Be careful when editing this file - don't edit unless you know what you are doing!
+</comment>
+<entry key="hasdisplayeddevmessage">true</entry>
+<entry key="backgroundimage">;null;</entry>
+<entry key="hascheckedjavaversion">true</entry>
+<entry key="drawbackgroundbehind">true</entry>
+<entry key="useoldpreviewbehavior">true</entry>
+<entry key="backgroundcolor">-3355444</entry>
+</properties>

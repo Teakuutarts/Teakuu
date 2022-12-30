@@ -1,0 +1,257 @@
+
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>
+            
+                Teakuu MC Skin Editor
+            
+    </title>
+    <meta name="description" content="Design your own Minecraft skin with our easy to use skin maker. You can also upload an existing skin to edit.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="og:image" content="/favicon.ico" />
+    <meta name="og:site_name" content="www.teakuu.tk" />
+    <meta name="og:locale" content="en_US" />
+    <link rel="apple-itouch-icon" href="/favicon.png" />
+    <meta name="application-name" content="Minecraft Skins"/>
+    <meta name="msapplication-TileColor" content="#FF1493"/>
+    <meta name="msapplication-TileImage" content="/favicon.png"/>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="canonical" href="https://www.teakuu.tk/mc/skineditor" />
+    <link rel="stylesheet" href="./assets/minecraftskins.min.css?be3dfdd8deca1e8c802a7134571706b36f7d7009" />
+    <link href="//fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto+Condensed:300,400" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="fb-root"></div>
+
+<!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div class="fixed-header">
+
+</header>
+</div>
+<div class="container main-content">
+    <div class="row">
+        
+    <div class="breaker clearfix">
+        <div class="content skineditor">
+            <h2 class="hero-title">Teakuu MC Skin Editor</h2>
+            
+    
+
+            <div class="card editor clearfix">
+                <div class="card-controls clearfix">
+                    <a class="control upload" href="#">Upload</a>
+                    <a class="control download" href="#">Download</a>
+                    <a class="control change" href="#">Change</a>
+                </div>
+                <div class="card-image clearfix">
+                    <div class="nav-image-wrapper">
+                        <div id="canvas"></div>
+
+                        <div id="bodyparts" class="selector">
+                            <div class="bodyparts">
+                                <span>Body</span>
+                                <div class="bodypart head" data-bodypart="head" data-layer="base"></div>
+                                <div class="bodypart torso" data-bodypart="torso" data-layer="base"></div>
+                                <div class="bodypart arm_left" data-bodypart="left_arm" data-layer="base"></div>
+                                <div class="bodypart arm_right" data-bodypart="right_arm" data-layer="base"></div>
+                                <div class="bodypart leg_left" data-bodypart="left_leg" data-layer="base"></div>
+                                <div class="bodypart leg_right" data-bodypart="right_leg" data-layer="base"></div>
+                            </div>
+                            <div class="bodyparts">
+                                <span>Overlay</span>
+                                <div class="bodypart head hidden" data-bodypart="head" data-layer="overlay"></div>
+                                <div class="bodypart torso hidden" data-bodypart="torso" data-layer="overlay"></div>
+                                <div class="bodypart arm_left hidden" data-bodypart="left_arm" data-layer="overlay"></div>
+                                <div class="bodypart arm_right hidden" data-bodypart="right_arm" data-layer="overlay"></div>
+                                <div class="bodypart leg_left hidden" data-bodypart="left_leg" data-layer="overlay"></div>
+                                <div class="bodypart leg_right hidden" data-bodypart="right_leg" data-layer="overlay"></div>
+                            </div>
+                        </div>
+
+                        <div class="toggle-select">
+                            <a class="body-selector" href="#"><i class="fa fa-male"></i> Body &amp; Overlay</a>
+                            <div class="selector-overlay" style="display: none;">
+                                <div class="bodyparts">
+                                    <span>Body</span>
+                                    <div class="bodypart head" data-bodypart="head" data-layer="base"></div>
+                                    <div class="bodypart torso" data-bodypart="torso" data-layer="base"></div>
+                                    <div class="bodypart arm_left" data-bodypart="left_arm" data-layer="base"></div>
+                                    <div class="bodypart arm_right" data-bodypart="right_arm" data-layer="base"></div>
+                                    <div class="bodypart leg_left" data-bodypart="left_leg" data-layer="base"></div>
+                                    <div class="bodypart leg_right" data-bodypart="right_leg" data-layer="base"></div>
+                                </div>
+                                <div class="bodyparts">
+                                    <span>Overlay</span>
+                                    <div class="bodypart head hidden" data-bodypart="head" data-layer="overlay"></div>
+                                    <div class="bodypart torso hidden" data-bodypart="torso" data-layer="overlay"></div>
+                                    <div class="bodypart arm_left hidden" data-bodypart="left_arm" data-layer="overlay"></div>
+                                    <div class="bodypart arm_right hidden" data-bodypart="right_arm" data-layer="overlay"></div>
+                                    <div class="bodypart leg_left hidden" data-bodypart="left_leg" data-layer="overlay"></div>
+                                    <div class="bodypart leg_right hidden" data-bodypart="right_leg" data-layer="overlay"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="editor-controls">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="control-icons">
+                                <ul>
+                                    <li>
+                                        <a href="#" class="brush tool active" data-toggle="tooltip" data-placement="top" title="Paint brush">
+                                            <i class="fa fa-paint-brush"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dropper tool" data-toggle="tooltip" data-placement="top" title="Select a color">
+                                            <i class="fa fa-eyedropper"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="bucket tool" data-toggle="tooltip" data-placement="top" title="Fill">
+                                            <span class="entypo-bucket"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="brightness-up" data-toggle="tooltip" data-placement="top" title="Increase brightness">
+                                            <i class="fa fa-star-o"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="brightness-down" data-toggle="tooltip" data-placement="top" title="Decrease brightness">
+                                            <i class="fa fa-star"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="erase tool" data-toggle="tooltip" data-placement="top" title="Erase">
+                                            <i class="fa fa-eraser"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="zoom-in" data-toggle="tooltip" data-placement="top" title="Zoom in">
+                                            <i class="fa fa-search-plus"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="zoom-out" data-toggle="tooltip" data-placement="top" title="Zoom out">
+                                            <i class="fa fa-search-minus"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="move" data-toggle="tooltip" data-placement="top" title="Move skin">
+                                            <i class="fa fa-arrows"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="center" data-toggle="tooltip" data-placement="top" title="Reset view">
+                                            <i class="fa fa-crosshairs"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="undo disabled" data-toggle="tooltip" data-placement="top" title="Undo">
+                                            <i class="fa fa-rotate-left"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="redo disabled" data-toggle="tooltip" data-placement="top" title="Redo">
+                                            <i class="fa fa-rotate-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="color-controls-wrapper">
+                        <div class="color-controls row">
+                            <div class="swatch active">
+                                <input type="text" id="color-one" class="form-control demo color active" value="#0074d9">
+                            </div>
+                            <div class="swatch">
+                                <input type="text" id="color-two" class="form-control demo color" value="#01ff70">
+                            </div>
+                            <div class="swatch">
+                                <input type="text" id="color-three" class="form-control demo color right" value="#ffdc00">
+                            </div>
+                            <div class="swatch">
+                                <input type="text" id="color-four" class="form-control demo color right" value="#ff851b">
+                            </div>
+                            <div class="swatch">
+                                <input type="text" id="color-five" class="form-control demo color" value="#ff4136">
+                            </div>
+                            <div class="swatch">
+                                <input type="text" id="color-six" class="form-control demo color" value="#f012be">
+                            </div>
+                            <div class="swatch">
+                                <input type="text" id="color-seven" class="form-control demo color right" value="#ffffff">
+                            </div>
+                            <div class="swatch">
+                                <input type="text" id="color-eight" class="form-control demo color right" value="#111111">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sub-controls">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <label for="model">Model</label>
+                            <select class="form-control selectpicker" id="model" name="model">
+                                <option value="steve">Steve</option>
+                                <option value="alex">Alex</option>
+                            </select>
+                        </div>
+                        <div class="col-md-5">
+                            <label for="stance">Stance</label>
+                            <select class="form-control selectpicker" id="stance" name="stance">
+                                <option value="Default">Default</option>
+                                <option value="Walk">Walk</option>
+                                <option value="Run">Run</option>
+                                <option value="Hug">Hug</option>
+                                <option value="Fly">Fly</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <input name="grid" id="grid" type="checkbox" checked>
+                            <label for="grid">Grid</label>
+                         </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div class="hidden">
+                <form method="post" enctype="multipart/form-data" action="" id="upload_form"><input type="file" id="upload_file" name="file"></form>
+            </div>
+        </div>
+                
+            </ul>
+        </div>
+        
+    </div>
+
+    </div>
+
+
+    </div>
+</div>
+
+    
+        
+    <script src="./assets/minecraftskins.min.js?be3dfdd8deca1e8c802a7134571706b36f7d7009"></script>
+        <script src="./assets/editor.min.js?be3dfdd8deca1e8c802a7134571706b36f7d7009"></script>
+
+<!-- country: US -->
+</body>
+</html>

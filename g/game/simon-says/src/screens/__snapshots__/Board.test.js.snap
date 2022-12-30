@@ -1,0 +1,57 @@
+exports[`test renders Board correctly 1`] = `
+<Connect(Shell)>
+  <styled.div
+    disabled={true}>
+    <styled.div
+      disbledPointer={true}>
+      <Flex
+        align="center"
+        justify="center">
+        <Pads
+          onClick={[Function]}
+          pad={
+            Object {
+              "active": false,
+              "component": "GreenPad",
+              "id": "green",
+            }
+          } />
+        <Pads
+          onClick={[Function]}
+          pad={
+            Object {
+              "active": false,
+              "component": "RedPad",
+              "id": "red",
+            }
+          } />
+      </Flex>
+      <styled.div
+        length={1} />
+      <Flex
+        align="center"
+        justify="center">
+        <Pads
+          onClick={[Function]}
+          pad={
+            Object {
+              "active": false,
+              "component": "YellowPad",
+              "id": "yellow",
+            }
+          } />
+        <Pads
+          onClick={[Function]}
+          pad={
+            Object {
+              "active": false,
+              "component": "BluePad",
+              "id": "blue",
+            }
+          } />
+      </Flex>
+    </styled.div>
+  </styled.div>
+  <Connect(Player) />
+</Connect(Shell)>
+`;
