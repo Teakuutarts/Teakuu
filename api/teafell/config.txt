@@ -1,0 +1,10 @@
+// rename .txt to .json if you are using this
+{
+     "prefix": "tt!",
+     "token": "OAuthTeXt123.authcode12345",
+     "status": "Uwa, So Temperate!",
+     "username": "TeakuuCup!"
+     "error": "Sorry, I had an issue processing that request!",
+     "clientId": "892265386769272892",
+     "placeholder": "(^~ v ~^)"
+}
