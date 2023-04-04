@@ -2,3 +2,24 @@ body{
      background-color: #56324c;
      background-image: url("skies.png");
 }
+h1 {
+     font-family: OpenSans;
+     color: rgb(175, 161, 175);
+     }
+     h2 {
+          font-family: OpenSans;
+          color: rgb(175, 161, 175);
+          }
+          h3 {
+               font-family: OpenSans;
+               color: rgb(175, 161, 175);
+               }
+a:link { color: red; }
+a:visited { color: rgb(42, 221, 42); } 
+a:hover { color: hotpink; }
+a:active { color: blue; } 
+
+@font-face {
+     font-family: OpenSans;
+     src: url(./OpenSans.ttf);
+}
