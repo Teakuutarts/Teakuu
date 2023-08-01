@@ -1,0 +1,356 @@
+/* RAINBOWSZJaejgsdiufgb */
+
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+
+
+
+@keyframes move {
+    100% {
+        transform: translate3d(0, 0, 1px) rotate(360deg);
+    }
+}
+
+.background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: #3E1E68;
+    overflow: hidden;
+}
+
+.background span {
+    width: 20vmin;
+    height: 20vmin;
+    border-radius: 20vmin;
+    backface-visibility: hidden;
+    position: absolute;
+    animation: move;
+    animation-duration: 45;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+.background span:nth-child(0) {
+    color: #b24e95;
+    top: 95%;
+    left: 78%;
+    animation-duration: 11s;
+    animation-delay: -47s;
+    transform-origin: 8vw -24vh;
+    box-shadow: 40vmin 0 5.757193863217101vmin currentColor;
+}
+.background span:nth-child(1) {
+    color: #FFACAC;
+    top: 17%;
+    left: 59%;
+    animation-duration: 26s;
+    animation-delay: -20s;
+    transform-origin: -16vw -19vh;
+    box-shadow: -40vmin 0 5.324975633519207vmin currentColor;
+}
+.background span:nth-child(2) {
+    color: #FFACAC;
+    top: 87%;
+    left: 34%;
+    animation-duration: 19s;
+    animation-delay: -2s;
+    transform-origin: 0vw 24vh;
+    box-shadow: 40vmin 0 5.712310141613991vmin currentColor;
+}
+.background span:nth-child(3) {
+    color: #b24e95;
+    top: 100%;
+    left: 22%;
+    animation-duration: 19s;
+    animation-delay: -34s;
+    transform-origin: -13vw 21vh;
+    box-shadow: -40vmin 0 5.838186868340449vmin currentColor;
+}
+.background span:nth-child(4) {
+    color: #E45A84;
+    top: 15%;
+    left: 67%;
+    animation-duration: 37s;
+    animation-delay: -43s;
+    transform-origin: -20vw 14vh;
+    box-shadow: -40vmin 0 5.284048416116581vmin currentColor;
+}
+.background span:nth-child(5) {
+    color: #b24e95;
+    top: 74%;
+    left: 70%;
+    animation-duration: 46s;
+    animation-delay: -48s;
+    transform-origin: 3vw 4vh;
+    box-shadow: 40vmin 0 5.357456756303679vmin currentColor;
+}
+.background span:nth-child(6) {
+    color: #FFACAC;
+    top: 84%;
+    left: 99%;
+    animation-duration: 48s;
+    animation-delay: -28s;
+    transform-origin: 4vw 2vh;
+    box-shadow: 40vmin 0 5.729920268586925vmin currentColor;
+}
+.background span:nth-child(7) {
+    color: #b24e95;
+    top: 38%;
+    left: 72%;
+    animation-duration: 22s;
+    animation-delay: -25s;
+    transform-origin: -1vw 0vh;
+    box-shadow: 40vmin 0 5.984297610860411vmin currentColor;
+}
+.background span:nth-child(8) {
+    color: #FFACAC;
+    top: 63%;
+    left: 48%;
+    animation-duration: 21s;
+    animation-delay: -40s;
+    transform-origin: 5vw -16vh;
+    box-shadow: 40vmin 0 5.005670305785978vmin currentColor;
+}
+.background span:nth-child(9) {
+    color: #FFACAC;
+    top: 17%;
+    left: 12%;
+    animation-duration: 55s;
+    animation-delay: -13s;
+    transform-origin: -2vw -16vh;
+    box-shadow: -40vmin 0 5.6535825606197vmin currentColor;
+}
+.background span:nth-child(10) {
+    color: #E45A84;
+    top: 59%;
+    left: 24%;
+    animation-duration: 37s;
+    animation-delay: -9s;
+    transform-origin: 7vw 9vh;
+    box-shadow: -40vmin 0 5.572855361187505vmin currentColor;
+}
+.background span:nth-child(11) {
+    color: #b24e95;
+    top: 82%;
+    left: 99%;
+    animation-duration: 32s;
+    animation-delay: -34s;
+    transform-origin: -7vw 9vh;
+    box-shadow: -40vmin 0 5.45766408850475vmin currentColor;
+}
+.background span:nth-child(12) {
+    color: #FFACAC;
+    top: 98%;
+    left: 21%;
+    animation-duration: 15s;
+    animation-delay: -26s;
+    transform-origin: 18vw 19vh;
+    box-shadow: -40vmin 0 5.918219472633286vmin currentColor;
+}
+.background span:nth-child(13) {
+    color: #b24e95;
+    top: 35%;
+    left: 73%;
+    animation-duration: 23s;
+    animation-delay: -38s;
+    transform-origin: -1vw 20vh;
+    box-shadow: 40vmin 0 5.895655246891771vmin currentColor;
+}
+.background span:nth-child(14) {
+    color: #b24e95;
+    top: 11%;
+    left: 70%;
+    animation-duration: 39s;
+    animation-delay: -6s;
+    transform-origin: -21vw 18vh;
+    box-shadow: 40vmin 0 5.840025529552654vmin currentColor;
+}
+.background span:nth-child(15) {
+    color: #b24e95;
+    top: 75%;
+    left: 22%;
+    animation-duration: 30s;
+    animation-delay: -10s;
+    transform-origin: -13vw -1vh;
+    box-shadow: -40vmin 0 5.211100891982249vmin currentColor;
+}
+.background span:nth-child(16) {
+    color: #583C87;
+    top: 82%;
+    left: 32%;
+    animation-duration: 16s;
+    animation-delay: -10s;
+    transform-origin: -22vw -12vh;
+    box-shadow: 40vmin 0 5.933928920336204vmin currentColor;
+}
+.background span:nth-child(17) {
+    color: #583C87;
+    top: 52%;
+    left: 67%;
+    animation-duration: 34s;
+    animation-delay: -7s;
+    transform-origin: 17vw -7vh;
+    box-shadow: -40vmin 0 5.32589455671485vmin currentColor;
+}
+.background span:nth-child(18) {
+    color: #E45A84;
+    top: 12%;
+    left: 98%;
+    animation-duration: 26s;
+    animation-delay: -17s;
+    transform-origin: -9vw -16vh;
+    box-shadow: 40vmin 0 5.446128931226028vmin currentColor;
+}
+.background span:nth-child(19) {
+    color: #FFACAC;
+    top: 51%;
+    left: 92%;
+    animation-duration: 21s;
+    animation-delay: -21s;
+    transform-origin: -23vw 19vh;
+    box-shadow: 40vmin 0 5.997647335092519vmin currentColor;
+}
+
+body {
+  color: #fff;
+  background-image: linear-gradient(-135deg, #7BC4DA 0%, #4E5ABE 100%);
+  background-image: linear-gradient(-135deg, #363256 0%, #4C4B78 92%);
+  background: #363256 rgba(94, 110, 220, 0.5);
+}
+
+/* social media butt - ons teehee */
+.button-19 {
+  appearance: button;
+  background-color: #1899D6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: din-round,sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.button-19:after {
+  background-clip: padding-box;
+  background-color: #1CB0F6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.button-19:main,
+.button-19:focus {
+  user-select: auto;
+}
+
+.button-19:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.button-19:disabled {
+  cursor: auto;
+}
