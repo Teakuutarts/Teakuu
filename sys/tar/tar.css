@@ -4,15 +4,15 @@ body{
 }
 h1 {
      font-family: OpenSans;
-     color: rgb(175, 161, 175);
+     color: rgb(11, 11, 11);
      }
      h2 {
           font-family: OpenSans;
-          color: rgb(175, 161, 175);
+          color: rgb(11, 11, 11);
           }
           h3 {
                font-family: OpenSans;
-               color: rgb(175, 161, 175);
+               color: rgb(11, 11, 11);
                }
 a:link { color: red; }
 a:visited { color: rgb(11, 11, 11); } 
