@@ -94,7 +94,7 @@ body {
     height: 100vh;
     top: 0;
     left: 0;
-    background: #f5c211;
+    background: #151c45;
     overflow: hidden;
 }
 
@@ -293,7 +293,7 @@ body {
 }
 
 body {
-  color: #fff;
+  color: #a13535;
   background-image: linear-gradient(-135deg, #7BC4DA 0%, #4E5ABE 100%);
   background-image: linear-gradient(-135deg, #363256 0%, #4C4B78 92%);
   background: #363256 rgba(94, 110, 220, 0.5);
