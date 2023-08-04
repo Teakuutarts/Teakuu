@@ -1,0 +1,40 @@
+{
+  "commands": [
+    {
+      "name": "",
+      "type": "action",
+      "trigger": "textCommand",
+      "actions": [],
+      "customId": 1691136662518,
+      "boundary": {
+        "worksIn": "guild",
+        "limits": []
+      }
+    },
+    {
+      "name": "",
+      "type": "event",
+      "trigger": "event",
+      "actions": [
+        null,
+        null
+      ],
+      "customId": 1691136672276,
+      "eventFile": "message_create.js",
+      "eventData": [
+        "",
+        ""
+      ]
+    }
+  ],
+  "count": 13,
+  "settings": {},
+  "color": "rgb(23, 0, 0)",
+  "btk": "OTEwNTY1NDMxOTI3MDA1MTk0.GrwH1V.hv7lWXI219Q8pwvBTgMgfEVINbaXQJRs3oLLZo",
+  "clientID": "910565431927005194",
+  "name": "Teafell",
+  "prjSrc": "C:\\Users\\Ace\\Documents\\Teafell",
+  "reset": false,
+  "colorsVisibility": false,
+  "prefix": "tt!"
+}

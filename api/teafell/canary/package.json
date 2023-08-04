@@ -1,0 +1,20 @@
+
+                {
+                    "name": "Teafell",
+                    "main": "bot.js",
+                    "author": "AceSardonyx",
+                    "description": "YAG-UTKB",
+                    "dependencies": {
+                        "discord-api-types": "^0.37.34",
+                        "@oceanicjs/builders": "^1.1.9",
+                        "oceanic.js": "^1.7.1",
+                        "fs": "^0.0.1-security",
+                        "fs-extra": "^11.1.1",
+                        "fse": "^4.0.1",
+                        "oceanic-collectors": "^1.0.7",
+                        "node-fetch": "^3.3.1",
+                        "request": "^2.88.2"
+                    },
+                    "version": "69420"
+                }
+                
