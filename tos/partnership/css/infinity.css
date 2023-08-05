@@ -1,0 +1,71 @@
+@import url(https://fonts.googleapis.com/css?family=Exo:100);
+/* Animations */
+@-webkit-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-webkit-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+/* Main styles */
+body {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #999;
+  font: 400 36px/1.5 exo, ubuntu, "segoe ui", helvetica, arial, sans-serif;
+  text-align: center;
+  /* img size is 50x50 */
+  background:    url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wAARCAAyADIDAREAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD8BLzx740vbmS6m8Ua2ksoTctnqE9hbDbGsa+XZ2D21pCSqgv5UCF5C0sm6V3dv2qeOxk5OTxNZN2uoVJU46JLSEHGK21tFXd27ttn5NHB4WMVFYek0m9ZQUpbt6ymnNq+121bRe7ZFb/hMvF//Q1eJP8Aweap/wDJVT9bxf8A0E4j/wAHVP8A5Ir6rhv+geh/4Jp//Ih/wmXi/wD6GrxJ/wCDzVP/AJKo+t4v/oJxH/g6p/8AJB9Vw3/QPQ/8E0//AJEP+Ey8X/8AQ1eJP/B5qn/yVR9bxf8A0E4j/wAHVP8A5IPquG/6B6H/AIJp/wDyIf8ACZeL/wDoavEn/g81T/5Ko+t4v/oJxH/g6p/8kH1XDf8AQPQ/8E0//kQ/4TLxf/0NXiT/AMHmqf8AyVR9bxf/AEE4j/wdU/8Akg+q4b/oHof+Caf/AMib8PxX+IEEMUCeIpWSGKOJGmsNJuZmWNQimW4uLCW4nlIUGSaeWSaV8vLI7szHdZnjopRWIdkkleFKTslbWUoOUn3cm23q22YvLsE226Cu227TqRV276RjNRS7JJJLRJI88rgO0KACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgD//Z') repeat 0 0;  
+  -webkit-animation: bg-scrolling-reverse 0.92s infinite;
+  /* Safari 4+ */
+  -moz-animation: bg-scrolling-reverse 0.92s infinite;
+  /* Fx 5+ */
+  -o-animation: bg-scrolling-reverse 0.92s infinite;
+  /* Opera 12+ */
+  animation: bg-scrolling-reverse 0.92s infinite;
+  /* IE 10+ */
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+body::before {
+  content: "Teakuu Partnership!";
+  font-size: 8rem;
+  font-weight: 100;
+  font-style: bold;
+}
+
