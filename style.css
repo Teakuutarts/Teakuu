@@ -1,11 +1,6 @@
 @charset "UTF-8";
 /*!
-
-	Itsy by FreeHTML5
-	https://freehtml5.co
-	https://twitter.com/fh5co
-	https://fb.com/fh5co
-
+Modified with love <3
 ==========================================================================
 */
 /* ==========================================================================
@@ -3693,4 +3688,8 @@ header.header nav,
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+/* REALLY SIMPLE SCROLLWHEEL, WHY DO PEOPLE NOT ADD THESE??!! */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { box-shadow: inset 0 0 5px grey; border-radius: 10px; }
+::-webkit-scrollbar-thumb { background: #ff8b73; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #c9507c; }
