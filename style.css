@@ -2213,7 +2213,7 @@ html {
 
 /* Background Colours */
 body, html {
-  background-color: #fafbfc;
+  background-color: #af7f95;
 }
 
 .side .widget, .post, header.header:before, header.header ul ul:before, .comments-wrapper, .author-wrap, .related-posts, .footer-widgets, .home-sticky {
@@ -2277,7 +2277,7 @@ a:hover, a:hover, .meta a,
 }
 
 .site-title a, .site-tagline, footer.footer, footer.footer a {
-  color: #737171;
+  color: #330000;
 }
 
 .hero {
