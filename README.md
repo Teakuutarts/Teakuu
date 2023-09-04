@@ -1,4 +1,6 @@
 # [Teakuu](https://www.teakuu.com)
-[.net](https://www.teakuu.net) [.co](https://www.teakuu.co) [.tk](https://www.teakuu.tk)
+For Admins/Devs -> [TWP](http://dev.teakuu.com)
 
-For Admins/Devs -> [TWP](http://dev.teakuu.con)
+
+These are no longer used with our main website.
+[tk.net](https://www.teakuu.net) [tk.co](https://www.teakuu.co) [tk.tk](https://www.teakuu.tk)
