@@ -1,0 +1,54 @@
+{
+    "short_name": "✩TK✩",
+    "name": "Teakuu",
+    "icons": [
+      {
+        "src": "/app/appx512.svg",
+        "type": "image/svg+xml",
+        "sizes": "512x512"
+      },
+      {
+        "src": "/app/appx512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "id": "/?tk",
+    "start_url": "/?tk",
+    "background_color": "#FC6066",
+    "display": "standalone",
+    "prefer_related_applications": true,
+    "related_applications": [
+        {
+        "platform": "play",
+        "id": "com.google.apps.teakuu"
+        }
+    ],
+    "scope": "/",
+    "theme_color": "#FC6066",
+    "shortcuts": [
+      {
+        "name": "TeakuuMC",
+        "short_name": "TKMC",
+        "description": "Everything related to Teakuu's Minecraft content!",
+        "url": "/mc?source=tk",
+        "icons": [{ "src": "/mc/img/tkmc.png", "sizes": "1920x1080" }]
+      },
+      {
+        "name": "About Teakuu",
+        "short_name": "About",
+        "description": "What are we about?",
+        "url": "/about?source=tk",
+        "icons": [{ "src": "/about/assets/css/images/TCC.png", "sizes": "192x192" }]
+      }
+    ],
+    "description": "Teakuu!",
+    "screenshots": [
+      {
+        "src": "/teakuuwx512.png",
+        "type": "image/png",
+        "sizes": "512x512",
+        "form_factor": "narrow"
+      }
+    ]
+  }
