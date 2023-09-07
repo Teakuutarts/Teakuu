@@ -1,0 +1,38 @@
+
+.library h2 {
+    flex-grow: 1;
+    font-size: small;
+    margin: 0.5rem;
+}
+
+.item-list .list-group-item {
+
+    cursor:auto;
+  }
+  
+.item-list .list-group-item:hover {
+    background-color:lavender;
+}
+
+.item-list .tool{
+    cursor:auto;
+}
+.item-list .tool:hover{
+    cursor:grab;
+}
+
+.body-part{
+    background-color:cadetblue;
+    margin: 2px;
+}
+.body-part:hover{
+    border: 1px;
+    border-color: cadetblue;
+    
+    cursor:pointer;
+}
+
+.limb{
+    width: 8px;
+    height: 24px;
+}
