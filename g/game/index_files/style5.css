@@ -1,0 +1,22 @@
+body {
+  background: url("https://computervirus.neocities.org/images/180431.jpg") no-repeat center fixed;
+  background-size: cover;
+  color: black;
+  font-family: "Times New Roman";
+  cursor: url("https://computervirus.neocities.org/images/cursor.png"), auto;
+}
+h2 {
+  color:goldenrod;
+}
+h3 {
+  color:goldenrod;
+}
+h4 {
+  color:goldenrod;
+}
+ul {
+  color:goldenrod;
+}
+p {
+  color:goldenrod;
+}

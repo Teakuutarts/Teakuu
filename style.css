@@ -2012,12 +2012,12 @@ blockquote, .content-aside {
 
 .site-title {
   font-size: 28px;
-  font-size: 2.8rem;
+  font-size: 5.0rem;
 }
 
 .more-link, header nav {
   font-size: 24px;
-  font-size: 2.4rem;
+  font-size: 3.4rem; /* stop changing it asshole 🫣 */
 }
 
 .meta {
