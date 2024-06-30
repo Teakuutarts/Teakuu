@@ -63,4 +63,4 @@ client.once('ready', () => {
 	console.log('Done! - *Happy Robot Noises!*')
 });
 
-// :3
+// ffs, port this shit to python 🤡
