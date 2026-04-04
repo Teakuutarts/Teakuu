@@ -1521,19 +1521,32 @@
 			<script src="/sys/error/404/assets/js/main.js"></script>
 			<script> async function updateTiles() { try {
      		const response = await fetch('https://xingxi.teakuu.com/bmark.json'); //fixed
-     		const nodes = await response.json();
+            const nodes = await response.json();
 			console.log("Data received:", nodes); // f12
-     		nodes.forEach((node, index) => { const tileId = `tile${index + 1}`;
-          	const tile = document.getElementById(tileId);
+            nodes.forEach((node, index) => { const tileId = `tile${index + 1}`;
+            const tile = document.getElementById(tileId);
 			if (tile) { const link = tile.querySelector('a');
-               const title = tile.querySelector('h2');
-               const description = tile.querySelector('.content p'); // u there?
-               if (node.url && link) link.href = node.url;
-               if (node.name && title) title.innerText = node.name;
-               if (node.description && description) description.innerText = node.description;
-               console.log(`Updated ${tileId} with ${node.name}`); } else {
-               console.warn(`Could not find element with ID: ${tileId}`); } }); } catch (error) {
-     		console.error('Error loading nodes:', error); } } document.addEventListener('DOMContentLoaded', updateTiles);
-			</script>
+            const title = tile.querySelector('h2');
+            const description = tile.querySelector('.content p'); // u there?
+            if (node.url && link) link.href = node.url;
+            if (node.name && title) title.innerText = node.name;
+            if (node.description && description) description.innerText = node.description;
+            console.log(`Updated ${tileId} with ${node.name}`); } else {
+            console.warn(`Could not find element with ID: ${tileId}`); } }); } catch (error) {
+            console.error('Error loading nodes:', error); } } document.addEventListener('DOMContentLoaded', updateTiles);
+            nodes.forEach((node, index) => { const tileId = `tile${index + 1}`;
+            const tile = document.getElementById(tileId);
+            if (tile) { const link = tile.querySelector('a'); const title = tile.querySelector('h2');
+            const description = tile.querySelector('.content p'); const image = tile.querySelector('.image img'); // Find the img tag
+            if (node.url && link) link.href = node.url;
+            if (node.name && title) title.innerText = node.name;
+            if (node.description && description) description.innerText = node.description;
+            if (node.image && image) { image.src = node.image; image.alt = node.name; // Good for SEO/Accessibility
+            }
+        console.log(`Updated ${tileId} with ${node.name}`);
+    }
+});
+
+		</script>
 	</body>
 </html>
