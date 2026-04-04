@@ -150,7 +150,7 @@
 			<script src="/sys/error/404/assets/js/util.js"></script>
 			<script src="/sys/error/404/assets/js/main.js"></script>
 			<script> async function updateTiles() { try {
-     		const response = await fetch('https://xingxi.teakuu.com/nodes.json');
+     		const response = await fetch('https://xingxi.teakuu.com/nodes.json' + Date.now());
      		const nodes = await response.json();
 			console.log("Data received:", nodes); // f12
      		nodes.forEach((node, index) => { const tileId = `tile${index + 1}`;
